@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle"
+    tools:context=".SpecialityActivity">
+
+    <TextView
+        android:id="@+id/speciality_text_title"
+        android:text="Spécialités"
+        style="@style/TextTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/speciality_text_q1"/>
+
+    <TextView
+        android:id="@+id/speciality_text_q1"
+        android:text="Quelles spécialités t'intéressent ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_text_title" />
+
+    <Switch
+        android:id="@+id/speciality_switch_LIT"
+        style="@style/CustomSwitch"
+        android:text="@string/LIT"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_text_q1" />
+
+    <Switch
+        android:id="@+id/speciality_switch_HIS"
+        style="@style/CustomSwitch"
+        android:text="@string/HIS"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_LIT" />
+
+    <Switch
+        android:id="@+id/speciality_switch_HUM"
+        style="@style/CustomSwitch"
+        android:text="@string/HUM"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_HIS" />
+
+    <Switch
+        android:id="@+id/speciality_switch_LAN"
+        style="@style/CustomSwitch"
+        android:text="@string/LAN"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_HUM" />
+
+    <Switch
+        android:id="@+id/speciality_switch_MAT"
+        style="@style/CustomSwitch"
+        android:text="@string/MAT"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_LAN" />
+
+    <Switch
+        android:id="@+id/speciality_switch_NUM"
+        style="@style/CustomSwitch"
+        android:text="@string/NUM"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_MAT" />
+
+    <Switch
+        android:id="@+id/speciality_switch_PHY"
+        style="@style/CustomSwitch"
+        android:text="@string/PHY"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_NUM" />
+
+    <Switch
+        android:id="@+id/speciality_switch_SVT"
+        style="@style/CustomSwitch"
+        android:text="@string/SVT"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_PHY" />
+
+    <Switch
+        android:id="@+id/speciality_switch_SI"
+        style="@style/CustomSwitch"
+        android:text="@string/SI"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_SVT" />
+
+    <Switch
+        android:id="@+id/speciality_switch_SES"
+        style="@style/CustomSwitch"
+        android:text="@string/SES"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_SI" />
+
+    <Switch
+        android:id="@+id/speciality_switch_THE"
+        style="@style/CustomSwitch"
+        android:text="@string/THE"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_SES" />
+
+    <Switch
+        android:id="@+id/speciality_switch_HDA"
+        style="@style/CustomSwitch"
+        android:text="@string/HDA"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_THE" />
+
+    <Button
+        android:id="@+id/speciality_button_start"
+        android:text="VALIDER"
+        style="@style/ButtonValidation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_HDA"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

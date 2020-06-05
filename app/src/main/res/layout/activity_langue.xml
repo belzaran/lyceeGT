@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle"
+    tools:context=".LangueActivity">
+
+    <TextView
+        android:id="@+id/langue_text_title"
+        android:text="Langues vivantes"
+        style="@style/TextTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/langue_text_q1"/>
+
+    <TextView
+        android:id="@+id/langue_text_q1"
+        android:text="Est-il important que l'enseignement des langues se fassent dans ton lycée (et pas en enseignement partagé) ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_text_title"
+        app:layout_constraintBottom_toTopOf="@id/langue_seekBar_q1"/>
+
+    <SeekBar
+        android:id="@+id/langue_seekBar_q1"
+        style="@style/SeekBarLevel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_text_q1"
+        app:layout_constraintBottom_toTopOf="@id/langue_text_r1"/>
+
+    <TextView
+        android:id="@+id/langue_text_r1"
+        android:text="Non"
+        style="@style/TextQuestion"
+        android:gravity="left"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/langue_text_r2"
+        app:layout_constraintTop_toBottomOf="@id/langue_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/langue_bar_1"/>
+
+    <TextView
+        android:id="@+id/langue_text_r2"
+        android:text="Moyennement"
+        style="@style/TextQuestion"
+        android:textAlignment="gravity"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/langue_text_r1"
+        app:layout_constraintRight_toLeftOf="@id/langue_text_r3"
+        app:layout_constraintTop_toBottomOf="@id/langue_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/langue_bar_1" />
+
+    <TextView
+        android:id="@+id/langue_text_r3"
+        android:text="Oui"
+        style="@style/TextQuestion"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toRightOf="@id/langue_text_r2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/langue_bar_1" />
+
+    <ImageView
+        android:id="@+id/langue_bar_1"
+        android:layout_width="512dp"
+        android:layout_height="32dp"
+        android:background="@color/colorBlank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_bar_1"
+        app:layout_constraintBottom_toTopOf="@id/langue_text_q2"
+/>
+
+    <TextView
+        android:id="@+id/langue_text_q2"
+        android:text="Quelle(s) langue(s) vivante(s) souhaites-tu suivre au lycée ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_bar_1"
+        app:layout_constraintBottom_toTopOf="@id/langue_switch_ESP"/>
+
+
+    <Switch
+        android:id="@+id/langue_switch_ESP"
+        style="@style/CustomSwitch"
+        android:text="Espagnol"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_text_q2" />
+
+
+    <Switch
+        android:id="@+id/langue_switch_ALL"
+        style="@style/CustomSwitch"
+        android:text="Allemand"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_ESP" />
+
+    <Switch
+        android:id="@+id/langue_switch_POR"
+        style="@style/CustomSwitch"
+        android:text="Portugais"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_ALL" />
+
+    <Switch
+        android:id="@+id/langue_switch_ITA"
+        style="@style/CustomSwitch"
+        android:text="Italien"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_POR" />
+
+
+    <Switch
+        android:id="@+id/langue_switch_CHI"
+        style="@style/CustomSwitch"
+        android:checked="false"
+        android:showText="true"
+        android:switchPadding="16dp"
+        android:text="Chinois"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_ITA" />
+
+    <Button
+        android:id="@+id/langue_button_start"
+        android:text="VALIDER"
+        style="@style/ButtonValidation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_CHI"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LyceesGT</string>
+    <!-- Languages -->
+    <string name="ESP">Espagnol</string>
+    <string name="ITA">Italien</string>
+    <string name="ALL">Allemand</string>
+    <string name="POR">Portugais</string>
+    <string name="CHI">Chinois</string>
+    <!-- Specialities -->
+    <string name="HIS">Histoire-géographie, géopolitique et sciences politiques</string>
+    <string name="LIT">Littérature, langues et cultures de l\'antiquité</string>
+    <string name="HUM">Humanités, littérature et philosophie</string>
+    <string name="LAN">Langues, littératures et cultures étrangères et régionales</string>
+    <string name="MAT">Mathématiques</string>
+    <string name="NUM">Numérique et sciences informatiques</string>
+    <string name="PHY">Physique-Chimie</string>
+    <string name="SVT">Sciences de la Vie et de la Terre</string>
+    <string name="SI">Sciences de l\'ingénieur</string>
+    <string name="SES">Sciences économiques et sociales</string>
+    <string name="THE">Théâtre</string>
+    <string name="HDA">Histoire des arts</string>
+
+</resources>

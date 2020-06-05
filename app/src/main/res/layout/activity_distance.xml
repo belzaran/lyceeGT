@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle"
+    tools:context=".DistanceActivity">
+
+    <TextView
+        android:id="@+id/distance_text_title"
+        android:text="Distance du lycée"
+        style="@style/TextTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/distance_text_q1"/>
+
+    <TextView
+        android:id="@+id/distance_text_q1"
+        android:text="Souhaites-tu que ton lycée soit près de chez toi ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_text_title"
+        app:layout_constraintBottom_toTopOf="@id/distance_seekBar_q1"/>
+
+    <SeekBar
+        android:id="@+id/distance_seekBar_q1"
+        style="@style/SeekBarLevel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_text_q1"
+        app:layout_constraintBottom_toTopOf="@id/distance_text_r1"/>
+
+    <TextView
+        android:id="@+id/distance_text_r1"
+        android:text="Non"
+        style="@style/TextQuestion"
+        android:gravity="left"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/distance_text_r2"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/distance_bar_1"/>
+
+    <TextView
+        android:id="@+id/distance_text_r2"
+        android:text="Moyennement"
+        style="@style/TextQuestion"
+        android:textAlignment="gravity"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/distance_text_r1"
+        app:layout_constraintRight_toLeftOf="@id/distance_text_r3"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/distance_bar_1" />
+
+    <TextView
+        android:id="@+id/distance_text_r3"
+        android:text="Oui"
+        style="@style/TextQuestion"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toRightOf="@id/distance_text_r2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/distance_bar_1" />
+
+    <ImageView
+        android:id="@+id/distance_bar_1"
+        android:layout_width="512dp"
+        android:layout_height="32dp"
+        android:background="@color/colorBlank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_bar_1"
+        app:layout_constraintBottom_toTopOf="@id/distance_text_q2"/>
+
+    <TextView
+        android:id="@+id/distance_text_q2"
+        android:text="Est-ce que ça te dérange de prendre les transports en commun pour aller au lycée ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/distance_seekBar_q2"
+        app:layout_constraintTop_toBottomOf="@id/distance_bar_1" />
+
+    <SeekBar
+        android:id="@+id/distance_seekBar_q2"
+        style="@style/SeekBarLevel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_text_q2"
+        app:layout_constraintBottom_toTopOf="@id/distance_text_r1_2"/>
+
+    <TextView
+        android:id="@+id/distance_text_r1_2"
+        android:text="Non"
+        style="@style/TextQuestion"
+        android:gravity="left"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/distance_text_r2_2"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
+/>
+
+    <TextView
+        android:id="@+id/distance_text_r2_2"
+        android:text="Moyennement"
+        style="@style/TextQuestion"
+        android:textAlignment="gravity"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/distance_text_r1_2"
+        app:layout_constraintRight_toLeftOf="@id/distance_text_r3_2"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
+/>
+
+    <TextView
+        android:id="@+id/distance_text_r3_2"
+        android:text="Oui"
+        style="@style/TextQuestion"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toRightOf="@id/distance_text_r2_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
+/>
+
+    <Button
+        android:id="@+id/distance_button_start"
+        android:text="VALIDER"
+        style="@style/ButtonValidation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_text_r3_2"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
