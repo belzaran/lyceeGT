@@ -13,13 +13,13 @@ import com.garehn.lyceesgt.lycees.Lycee;
 
 public class ResultActivity extends AppCompatActivity {
 
-    static public int lyceesNumber = 6;
-    public Lycee[] lycees = new Lycee[lyceesNumber];
+    static public int maxLycees = 6;
+    public Lycee[] lycees;
     private static final int GAME_ACTIVITY_REQUEST_CODE = 69;
-    public static final String[] SCORE = new String[lyceesNumber];
+    public String[] SCORE;
 
-    private ProgressBar[] resultBar = new ProgressBar[lyceesNumber];
-    private TextView[] resultText = new TextView[lyceesNumber];
+    private ProgressBar[] resultBar = new ProgressBar[6];
+    private TextView[] resultText = new TextView[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +28,22 @@ public class ResultActivity extends AppCompatActivity {
         createAssets();
 
         // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
+        Intent intent = getIntent();
+        maxLycees = intent.getIntExtra("max", 0);
+        lycees = new Lycee[maxLycees];
+        SCORE = new String[maxLycees];
         SCORE[0]="HUGO";
         SCORE[1]="CHARLEMAGNE";
         SCORE[2]="GERMAIN";
         SCORE[3]="ARAGO";
         SCORE[4]="BOUCHER";
         SCORE[5]="RAVEL";
-        Intent intent = getIntent();
-        if (intent != null) {
-            for (int i = 0; i < lyceesNumber; i++) {
-                lycees[i] = intent.getParcelableExtra(SCORE[i]);
 
+        if (intent != null) {
+            for (int i = 0; i < maxLycees; i++) {
+                lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
         }
-        lycees[2].showInformation();
 
         showScores();
 
@@ -67,19 +69,19 @@ public class ResultActivity extends AppCompatActivity {
         //find the maximum of points
         int max = 0;
 
-        for(int i = 0;i<lyceesNumber;i++) {
+        for(int i = 0;i<maxLycees;i++) {
             if (lycees[i].getPoints() > max) {
                 max = lycees[i].getPoints();
             }
         }
 
         //set the progressBars to the max points
-        for(int i = 0;i<lyceesNumber;i++){
+        for(int i = 0;i<maxLycees;i++){
             resultBar[i].setMax(max);
         }
 
 
-        for(int i = 0;i<lyceesNumber;i++){
+        for(int i = 0;i<maxLycees;i++){
             resultText[i].setText(lycees[i].getName());
             resultBar[i].setProgress(lycees[i].getPoints());
             //resultBar[i].setProgressTintList(ColorStateList.valueOf(Color.RED));

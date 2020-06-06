@@ -16,10 +16,10 @@ import com.garehn.lyceesgt.lycees.Lycee;
 
 public class LangueActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static public int lyceesNumber = 6;
-    public Lycee[] lycees = new Lycee[lyceesNumber];
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 2;
-    public static final String[] SCORE = new String[lyceesNumber];
+    public int maxLycees;
+    public Lycee[] lycees;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 3;
+    public static String[] SCORE;
 
     private SeekBar langueBar;
     private Switch switchEsp;
@@ -39,20 +39,22 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
         createAssets();
 
         // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
+        Intent intent = getIntent();
+        maxLycees = intent.getIntExtra("max", 0);
+        lycees = new Lycee[maxLycees];
+        SCORE = new String[maxLycees];
         SCORE[0]="HUGO";
         SCORE[1]="CHARLEMAGNE";
         SCORE[2]="GERMAIN";
         SCORE[3]="ARAGO";
         SCORE[4]="BOUCHER";
         SCORE[5]="RAVEL";
-        Intent intent = getIntent();
-        if (intent != null) {
-            for (int i = 0; i < lyceesNumber; i++) {
-                lycees[i] = intent.getParcelableExtra(SCORE[i]);
 
+        if (intent != null) {
+            for (int i = 0; i < maxLycees; i++) {
+                lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
         }
-
     }
 
     public void createAssets(){
@@ -74,18 +76,20 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
         calculateScores(langueBar.getProgress(), switchEsp.isChecked(),switchAll.isChecked(), switchPor.isChecked(), switchIta.isChecked(), switchChi.isChecked());
 
 
-        Intent activity = new Intent(LangueActivity.this, ResultActivity.class);
+        Intent activity = new Intent(LangueActivity.this, SpecialityActivity.class);
 
-        for(int i = 0; i < lyceesNumber; i++) {
+        for(int i = 0; i < maxLycees; i++) {
             activity.putExtra(SCORE[i], lycees[i]);
         }
+
+        activity.putExtra("max", maxLycees);
 
         setResult(RESULT_OK, activity);
         startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
     }
 
     public void calculateScores(int a, boolean esp, boolean all, boolean por, boolean ita, boolean chi){
-        Log.i("GAREHN_DISTANCE"," CALCULATE");
+        Log.i("GAREHN_LANGUE"," CALCULATE");
 
         //Calculate bonus
         int bonus = a*2;
@@ -93,7 +97,7 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
             bonus = 1;
         }
 
-        for(int i = 0; i<lyceesNumber; i++){
+        for(int i = 0; i<maxLycees; i++){
 
             if(esp) {
                 if (lycees[i].getLangues().contains(Langues.ESP)) {
@@ -125,13 +129,13 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
                 }
             }
 
-            Log.i("GAREHN_DISTANCE",lycees[i].getName() + " : " + lycees[i].getPoints());
+            Log.i("GAREHN_LANGUE",lycees[i].getName() + " : " + lycees[i].getPoints());
 
         }
 
         }
 
-        public int booleanToInt(boolean b){
+        /*public int booleanToInt(boolean b){
         int result = 0;
         if (b){
             result = 1;
@@ -141,8 +145,7 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
             }
         return result;
 
-
-        }
+        }*/
     }
 
 

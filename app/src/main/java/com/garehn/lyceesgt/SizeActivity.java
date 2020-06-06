@@ -13,10 +13,10 @@ import com.garehn.lyceesgt.lycees.Lycee;
 
 public class SizeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static public int lyceesNumber = 6;
-    public Lycee[] lycees = new Lycee[lyceesNumber];
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 4;
-    public static final String[] SCORE = new String[lyceesNumber];
+    public int maxLycees;
+    public Lycee[] lycees;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 2;
+    public static String[] SCORE;
     
     private Button buttonValidate;
     private SeekBar sizeBar1;
@@ -32,20 +32,22 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
         createAssets();
 
         // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
+        Intent intent = getIntent();
+        maxLycees = intent.getIntExtra("max", 0);
+        lycees = new Lycee[maxLycees];
+        SCORE = new String[maxLycees];
         SCORE[0]="HUGO";
         SCORE[1]="CHARLEMAGNE";
         SCORE[2]="GERMAIN";
         SCORE[3]="ARAGO";
         SCORE[4]="BOUCHER";
         SCORE[5]="RAVEL";
-        Intent intent = getIntent();
+        
         if (intent != null) {
-            for (int i = 0; i < lyceesNumber; i++) {
+            for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
-
             }
         }
-        lycees[2].showInformation();
     }
 
     public void createAssets(){
@@ -66,14 +68,16 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
     calculateScores(sizeBar1.getProgress(), sizeBar2.getProgress());
 
 
-    Intent sizeActivity = new Intent(SizeActivity.this, LangueActivity.class);
+    Intent activity = new Intent(SizeActivity.this, LangueActivity.class);
 
-            for(int i = 0; i < lyceesNumber; i++) {
-        sizeActivity.putExtra(SCORE[i], lycees[i]);
+            for(int i = 0; i < maxLycees; i++) {
+        activity.putExtra(SCORE[i], lycees[i]);
     }
 
-    setResult(RESULT_OK, sizeActivity);
-    startActivityForResult(sizeActivity, GAME_ACTIVITY_REQUEST_CODE);
+       activity.putExtra("max", maxLycees);
+
+    setResult(RESULT_OK, activity);
+    startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
 }
 
     public void calculateScores(int a, int b){
@@ -83,7 +87,7 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
         int small = 800;
         int big = 1000;
 
-        for (int i = 0; i<lyceesNumber; i++){
+        for (int i = 0; i<maxLycees; i++){
             if (lycees[i].getPopulation() < 800){
                 switch(b){
                     case 0:
