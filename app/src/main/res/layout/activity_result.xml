@@ -5,10 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/ActivityStyle">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ActivityStyle">
+<androidx.constraintlayout.widget.ConstraintLayout style="@style/ActivityStyle">
     tools:context=".ResultActivity">
 
     <TextView
@@ -69,9 +66,8 @@
     <ProgressBar
         android:id="@+id/result_bar_l3"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/result_text_l2"
+        app:layout_constraintTop_toTopOf="@id/result_text_l3"
         style="@style/ResultBar"
-        android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.6"/>
 
     <TextView
@@ -104,11 +100,14 @@
 
     <ProgressBar
         android:id="@+id/result_bar_l5"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/result_text_l4"
         style="@style/ResultBar"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.6"/>
+        android:layout_height="wrap_content"
+        android:scrollbarSize="4dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/result_text_l5"
+        app:layout_constraintBottom_toTopOf="@id/result_text_l6"
+        app:layout_constraintWidth_percent="0.6" />
 
     <TextView
         android:id="@+id/result_text_l6"

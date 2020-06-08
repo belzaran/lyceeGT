@@ -84,11 +84,11 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
 
         @Override
         public void onClick (View v){
-            Log.i("GAREHN_DISTANCE", " CLICK");
+            Log.i("GAREHN_TECHNO", " CLICK");
             calculateScores(switchLIT.isChecked(), switchHIS.isChecked(), switchHUM.isChecked(), switchLAN.isChecked(), switchMAT.isChecked(),switchNUM.isChecked(),switchPHY.isChecked(),switchSVT.isChecked(),switchSI.isChecked(),switchSES.isChecked(),switchTHE.isChecked(),switchHDA.isChecked());
 
 
-            Intent activity = new Intent(SpecialityActivity.this, ResultActivity.class);
+            Intent activity = new Intent(SpecialityActivity.this, TechnoActivity.class);
 
             for (int i = 0; i < maxLycees; i++) {
                 activity.putExtra(SCORE[i], lycees[i]);

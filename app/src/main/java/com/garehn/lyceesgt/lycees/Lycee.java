@@ -8,6 +8,8 @@ import android.util.Log;
 
 public class Lycee implements Parcelable {
 
+    protected int id;
+
     protected ArrayList<Langues> langues = new ArrayList();
     protected ArrayList<Techno> techno = new ArrayList();
     protected ArrayList<Specialities> specialities = new ArrayList();
@@ -17,8 +19,8 @@ public class Lycee implements Parcelable {
     //protected int time = 0;
 
     protected int population; // reference : https://ville-data.com/
-    protected int ranking; // reference : https://ville-data.com/
-    //Best Ranking is 1. Calcul = (Taux de mention * 3) + (Taux de réussite * 2) + (Taux d'accès seconde bac ) + (effectif seconde/50))*100).
+    protected int rank; // reference : https://ville-data.com/
+    //Best Rank is 1. Calcul = (Taux de mention * 3) + (Taux de réussite * 2) + (Taux d'accès seconde bac ) + (effectif seconde/50))*100).
 
     protected int distance;
     protected double longitude;
@@ -47,7 +49,7 @@ public class Lycee implements Parcelable {
     protected Lycee(Parcel in) {
         name = in.readString();
         population = in.readInt();
-        ranking = in.readInt();
+        rank = in.readInt();
         distance = in.readInt();
         longitude = in.readDouble();
         latitude = in.readDouble();
@@ -101,6 +103,14 @@ public class Lycee implements Parcelable {
     /*----------------------------------------------------------------------------------------------
     GETTERS AND SETTERS
     ----------------------------------------------------------------------------------------------*/
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public ArrayList<DoubleCursus> getDoubleCursus() {
         return doubleCursus;
     }
@@ -161,12 +171,12 @@ public class Lycee implements Parcelable {
         this.population = population;
     }
 
-    public int getRanking() {
-        return ranking;
+    public int getRank() {
+        return rank;
     }
 
-    public void setRanking(int ranking) {
-        this.ranking = ranking;
+    public void setRank(int rank) {
+        this.rank = rank;
     }
 
     public void setDistance(int distance) {
@@ -215,7 +225,7 @@ public class Lycee implements Parcelable {
     public void showInformation(){
         Log.i("GAREHN_LYCEE", "------------------------");
         Log.i("GAREHN_LYCEE", "  " + name);
-        Log.i("GAREHN_LYCEE", "  rang : " + ranking);
+        Log.i("GAREHN_LYCEE", "  rang : " + rank);
         Log.i("GAREHN_LYCEE", "  " + population + " élèves");
         Log.i("GAREHN_LYCEE", "  distance : " + distance + " m");
         Log.i("GAREHN_LYCEE", "  langues : " + getLangues());
@@ -236,7 +246,7 @@ public class Lycee implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeInt(population);
-        dest.writeInt(ranking);
+        dest.writeInt(rank);
         dest.writeInt(distance);
         dest.writeDouble(longitude);
         dest.writeDouble(latitude);

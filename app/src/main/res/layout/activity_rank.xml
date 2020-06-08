@@ -9,138 +9,138 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/ActivityStyle"
-    tools:context=".DistanceActivity">
+    tools:context=".RankActivity">
 
     <TextView
-        android:id="@+id/distance_text_title"
-        android:text="Distance du lycée"
+        android:id="@+id/rank_text_title"
+        android:text="Rang du lycée"
         style="@style/TextTitle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/distance_text_q1"/>
+        app:layout_constraintBottom_toTopOf="@id/rank_text_q1"/>
 
     <TextView
-        android:id="@+id/distance_text_q1"
-        android:text="Souhaites-tu que ton lycée soit près de chez toi ?"
+        android:id="@+id/rank_text_q1"
+        android:text="Le classement du lycée est-il important pour toi ?"
         style="@style/TextQuestion"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_text_title"
-        app:layout_constraintBottom_toTopOf="@id/distance_seekBar_q1"/>
+        app:layout_constraintTop_toBottomOf="@id/rank_text_title"
+        app:layout_constraintBottom_toTopOf="@id/rank_seekBar_q1"/>
 
     <SeekBar
-        android:id="@+id/distance_seekBar_q1"
+        android:id="@+id/rank_seekBar_q1"
         style="@style/SeekBarLevel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_text_q1"
-        app:layout_constraintBottom_toTopOf="@id/distance_text_r1"/>
+        app:layout_constraintTop_toBottomOf="@id/rank_text_q1"
+        app:layout_constraintBottom_toTopOf="@id/rank_text_r1"/>
 
     <TextView
-        android:id="@+id/distance_text_r1"
+        android:id="@+id/rank_text_r1"
         android:text="Non"
         style="@style/TextQuestion"
         android:gravity="left"
         android:textAlignment="gravity"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/distance_text_r2"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
-        app:layout_constraintBottom_toTopOf="@id/distance_bar_1"/>
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r2"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/rank_bar_1"/>
 
     <TextView
-        android:id="@+id/distance_text_r2"
+        android:id="@+id/rank_text_r2"
         android:text="Moyennement"
         style="@style/TextQuestion"
         android:textAlignment="gravity"
         android:gravity="center_horizontal"
-        app:layout_constraintLeft_toRightOf="@id/distance_text_r1"
-        app:layout_constraintRight_toLeftOf="@id/distance_text_r3"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
-        app:layout_constraintBottom_toTopOf="@id/distance_bar_1" />
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r1"
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r3"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/rank_bar_1" />
 
     <TextView
-        android:id="@+id/distance_text_r3"
+        android:id="@+id/rank_text_r3"
         android:text="Oui"
         style="@style/TextQuestion"
         android:gravity="right"
         android:textAlignment="gravity"
-        app:layout_constraintLeft_toRightOf="@id/distance_text_r2"
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q1"
-        app:layout_constraintBottom_toTopOf="@id/distance_bar_1" />
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q1"
+        app:layout_constraintBottom_toTopOf="@id/rank_bar_1" />
 
     <ImageView
-        android:id="@+id/distance_bar_1"
+        android:id="@+id/rank_bar_1"
         android:layout_width="512dp"
         android:layout_height="32dp"
         android:background="@color/colorBlank"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_bar_1"
-        app:layout_constraintBottom_toTopOf="@id/distance_text_q2"/>
+        app:layout_constraintTop_toBottomOf="@id/rank_bar_1"
+        app:layout_constraintBottom_toTopOf="@id/rank_text_q2"/>
 
     <TextView
-        android:id="@+id/distance_text_q2"
-        android:text="Est-ce que ça te dérange de prendre les transports en commun pour aller au lycée ?"
+        android:id="@+id/rank_text_q2"
+        android:text="Quel type de classement de lycée vises-tu ?"
         style="@style/TextQuestion"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/distance_seekBar_q2"
-        app:layout_constraintTop_toBottomOf="@id/distance_bar_1" />
+        app:layout_constraintBottom_toTopOf="@id/rank_seekBar_q2"
+        app:layout_constraintTop_toBottomOf="@id/rank_bar_1" />
 
     <SeekBar
-        android:id="@+id/distance_seekBar_q2"
+        android:id="@+id/rank_seekBar_q2"
         style="@style/SeekBarLevel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_text_q2"
-        app:layout_constraintBottom_toTopOf="@id/distance_text_r1_2"/>
+        app:layout_constraintTop_toBottomOf="@id/rank_text_q2"
+        app:layout_constraintBottom_toTopOf="@id/rank_text_r1_2"/>
 
     <TextView
-        android:id="@+id/distance_text_r1_2"
-        android:text="Non"
+        android:id="@+id/rank_text_r1_2"
+        android:text="Moyen"
         style="@style/TextQuestion"
         android:gravity="left"
         android:textAlignment="gravity"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/distance_text_r2_2"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
-/>
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r2_2"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q2"
+        />
 
     <TextView
-        android:id="@+id/distance_text_r2_2"
-        android:text="Moyennement"
+        android:id="@+id/rank_text_r2_2"
+        android:text="Bon"
         style="@style/TextQuestion"
         android:textAlignment="gravity"
         android:gravity="center_horizontal"
-        app:layout_constraintLeft_toRightOf="@id/distance_text_r1_2"
-        app:layout_constraintRight_toLeftOf="@id/distance_text_r3_2"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
-/>
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r1_2"
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r3_2"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q2"
+        />
 
     <TextView
-        android:id="@+id/distance_text_r3_2"
-        android:text="Oui"
+        android:id="@+id/rank_text_r3_2"
+        android:text="Très bon"
         style="@style/TextQuestion"
         android:gravity="right"
         android:textAlignment="gravity"
-        app:layout_constraintLeft_toRightOf="@id/distance_text_r2_2"
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r2_2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_seekBar_q2"
-/>
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q2"
+        />
+
 
     <Button
-        android:id="@+id/distance_button_start"
+        android:id="@+id/rank_button_start"
         android:text="VALIDER"
         style="@style/ButtonValidation"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/distance_text_r3_2"
-        />
-
+        app:layout_constraintTop_toBottomOf="@id/rank_text_r3_2"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
+    
 </ScrollView>

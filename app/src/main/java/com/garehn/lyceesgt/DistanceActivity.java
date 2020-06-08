@@ -55,8 +55,9 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         // hugo
         Lycee hugo = new Lycee("Victor Hugo",48.85752487182617,2.3631656169891357);
         lycees[0] = hugo;
+
         hugo.setPopulation(491);
-        hugo.setRanking(168);
+        hugo.setRank(168);
         hugo.addLangue(Langues.ALL);
         hugo.addLangue(Langues.ESP);
         hugo.addLangue(Langues.ITA);
@@ -79,7 +80,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         charlemagne.addLangue(Langues.ALL);
         charlemagne.addLangue(Langues.ESP);
         charlemagne.setPopulation(1014);
-        charlemagne.setRanking(56);
+        charlemagne.setRank(56);
         charlemagne.addSpecialities(Specialities.HIS);
         charlemagne.addSpecialities(Specialities.HUM);
         charlemagne.addSpecialities(Specialities.LAN);
@@ -90,7 +91,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         charlemagne.addSpecialities(Specialities.SES);
         charlemagne.showInformation();
 
-        // SOPHIE germain
+        // SOPHIE GERMAIN
         Lycee germain = new Lycee("Sophie Germain", 48.8547103,2.3576802);
         lycees[2] = germain;
         germain.addLangue(Langues.ALL);
@@ -98,7 +99,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         germain.addLangue(Langues.ESP);
         germain.addLangue(Langues.ITA);
         germain.setPopulation(861);
-        germain.setRanking(78);
+        germain.setRank(78);
         germain.addSpecialities(Specialities.HIS);
         germain.addSpecialities(Specialities.HUM);
         germain.addSpecialities(Specialities.LAN);
@@ -116,7 +117,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         arago.addLangue(Langues.ALL);
         arago.addLangue(Langues.ESP);
         arago.setPopulation(628);
-        arago.setRanking(628);
+        arago.setRank(628);
         arago.addSpecialities(Specialities.HIS);
         arago.addSpecialities(Specialities.HUM);
         arago.addSpecialities(Specialities.MAT);
@@ -135,7 +136,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         boucher.addLangue(Langues.ESP);
         boucher.addLangue(Langues.CHI);
         boucher.setPopulation(1372);
-        boucher.setRanking(369);
+        boucher.setRank(369);
         boucher.addSpecialities(Specialities.HDA);
         boucher.addSpecialities(Specialities.HIS);
         boucher.addSpecialities(Specialities.HUM);
@@ -156,7 +157,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         ravel.addLangue(Langues.ALL);
         ravel.addLangue(Langues.ESP);
         ravel.setPopulation(1423);
-        ravel.setRanking(606);
+        ravel.setRank(606);
         ravel.addSpecialities(Specialities.HIS);
         ravel.addSpecialities(Specialities.HUM);
         ravel.addSpecialities(Specialities.LAN);
@@ -171,12 +172,14 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         ravel.addTechno(Techno.STMG);
         ravel.showInformation();
 
-
+        for (int i = 0; i<maxLycees;i++){
+            lycees[i].setId(i);
+        }
     }
 
     @Override
     public void onClick(View v) {
-        Log.i("GAREHN_DISTANCE"," CLICK");
+        Log.i("GAREHN_DISTANCE"," Click");
         calculateScores(distanceBar1.getProgress(), distanceBar2.getProgress());
 
 
@@ -193,7 +196,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void calculateScores(int a, int b){
-        Log.i("GAREHN_DISTANCE"," CALCULATE");
+        Log.i("GAREHN_DISTANCE"," Calculate");
 
         int bonus = a+b;
 

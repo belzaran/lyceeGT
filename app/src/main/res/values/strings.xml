@@ -20,4 +20,12 @@
     <string name="THE">Théâtre</string>
     <string name="HDA">Histoire des arts</string>
 
+    <!-- Technologies -->
+    <string name="STMG">STMG (management et gestion)</string>
+    <string name="STI2D">STI2D (industrie et développement durable)</string>
+    <string name="STD2A">STD2A (design et arts appliqués)</string>
+    <string name="STL">STL (laboratoire)</string>
+    <string name="ST2S">ST2S (santé et social)</string>
+    <string name="STHR">STHR (hôtellerie et restauration)</string>
+
 </resources>

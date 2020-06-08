@@ -11,23 +11,23 @@ import android.widget.SeekBar;
 
 import com.garehn.lyceesgt.lycees.Lycee;
 
-public class SizeActivity extends AppCompatActivity implements View.OnClickListener {
+public class RankActivity extends AppCompatActivity implements View.OnClickListener {
 
     public int maxLycees;
     public Lycee[] lycees;
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 2;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 10;
     public static String[] SCORE;
-    
+
     private Button buttonValidate;
-    private SeekBar sizeBar1;
-    private SeekBar sizeBar2;
+    private SeekBar rankBar1;
+    private SeekBar rankBar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_size);
+        setContentView(R.layout.activity_rank);
 
-        Log.i("GAREHN_SIZE","  Connecting to SizeActivity");
+        Log.i("GAREHN_RANK","  Connecting to RankActivity");
 
         createAssets();
 
@@ -42,7 +42,7 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
         SCORE[3]="ARAGO";
         SCORE[4]="BOUCHER";
         SCORE[5]="RAVEL";
-        
+
         if (intent != null) {
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
@@ -52,63 +52,63 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void createAssets(){
 
-        sizeBar1 = this.findViewById(R.id.size_seekBar_q1);
-        sizeBar2 = this.findViewById(R.id.size_seekBar_q2);
-        buttonValidate = this.findViewById(R.id.size_button_start);
+        rankBar1 = this.findViewById(R.id.rank_seekBar_q1);
+        rankBar2 = this.findViewById(R.id.rank_seekBar_q2);
+        buttonValidate = this.findViewById(R.id.rank_button_start);
         buttonValidate.setOnClickListener(this);
-        buttonValidate = findViewById(R.id.size_button_start);
+        buttonValidate = findViewById(R.id.rank_button_start);
         buttonValidate.setOnClickListener(this);
-
     }
-
 
     @Override
     public void onClick(View v) {
-  Log.i("GAREHN_SIZE"," CLICK");
-    calculateScores(sizeBar1.getProgress(), sizeBar2.getProgress());
+        Log.i("GAREHN_rank"," CLICK");
+        calculateScores(rankBar1.getProgress(), rankBar2.getProgress());
 
+        Intent activity = new Intent(RankActivity.this, LangueActivity.class);
 
-    Intent activity = new Intent(SizeActivity.this, RankActivity.class);
+        for(int i = 0; i < maxLycees; i++) {
+            activity.putExtra(SCORE[i], lycees[i]);
+        }
 
-            for(int i = 0; i < maxLycees; i++) {
-        activity.putExtra(SCORE[i], lycees[i]);
+        activity.putExtra("max", maxLycees);
+
+        setResult(RESULT_OK, activity);
+        startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
+        
     }
 
-       activity.putExtra("max", maxLycees);
-
-    setResult(RESULT_OK, activity);
-    startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
-}
-
     public void calculateScores(int a, int b){
-        Log.i("GAREHN_SIZE"," CALCULATE");
+        Log.i("GAREHN_RANK"," CALCULATE");
 
+        //a = importance
+        //b = wanted rank
         int bonus = a;
-        int small = 800;
-        int big = 1000;
+        int bad = 1000;
+        int good = 400;
 
         for (int i = 0; i<maxLycees; i++){
-            if (lycees[i].getPopulation() < 800){
+            if (lycees[i].getRank() < good){
                 switch(b){
-                    case 0:
+                    case 2:
                         lycees[i].addPoints(bonus * 2);
                         break;
                     case 1:
                         lycees[i].addPoints(bonus);
                         break;
-                    case 2:
+                    case 0:
                         break;
                 }
             }
-            else if (lycees[i].getPopulation() > 1000){
+            else if (lycees[i].getPopulation() > bad){
                 switch(b){
-                    case 2:
+                    case 0:
                         lycees[i].addPoints(bonus * 2);
                         break;
                     case 1:
                         lycees[i].addPoints(bonus);
                         break;
-                    case 0:
+                    case 2:
                         break;
                 }
             }
@@ -123,7 +123,7 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
             }
-            Log.i("GAREHN_SIZE",lycees[i].getName() + " : " + lycees[i].getPoints());
+            Log.i("GAREHN_RANK",lycees[i].getName() + " : " + lycees[i].getPoints());
         }
     }
 }

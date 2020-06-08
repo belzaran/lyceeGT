@@ -135,17 +135,6 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
 
         }
 
-        /*public int booleanToInt(boolean b){
-        int result = 0;
-        if (b){
-            result = 1;
-            }
-        else{
-            result =0;
-            }
-        return result;
-
-        }*/
     }
 
 

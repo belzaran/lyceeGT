@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityStyle">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/ActivityStyle"
     tools:context=".TechnoActivity">
 
+    <TextView
+        android:id="@+id/techno_text_title"
+        android:text="Bacs technologiques"
+        style="@style/TextTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/techno_text_q1"/>
+
+    <TextView
+        android:id="@+id/techno_text_q1"
+        android:text="Quels bacs technologiques t'intéressent ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_text_title" />
+
+    <Switch
+        android:id="@+id/techno_switch_STMG"
+        style="@style/CustomSwitch"
+        android:text="@string/STMG"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_text_q1" />
+
+    <Switch
+        android:id="@+id/techno_switch_STI2D"
+        style="@style/CustomSwitch"
+        android:text="@string/STI2D"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_STMG" />
+
+    <Switch
+        android:id="@+id/techno_switch_STL"
+        style="@style/CustomSwitch"
+        android:text="@string/STL"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_STI2D" />
+
+    <Switch
+        android:id="@+id/techno_switch_STD2A"
+        style="@style/CustomSwitch"
+        android:text="@string/STD2A"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_STL" />
+
+    <Switch
+        android:id="@+id/techno_switch_ST2S"
+        style="@style/CustomSwitch"
+        android:text="@string/ST2S"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_STD2A" />
+
+    <Switch
+        android:id="@+id/techno_switch_STHR"
+        style="@style/CustomSwitch"
+        android:text="@string/STHR"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_ST2S" />
+
+    <Button
+        android:id="@+id/techno_button_start"
+        android:text="VALIDER"
+        style="@style/ButtonValidation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/techno_switch_STHR"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
