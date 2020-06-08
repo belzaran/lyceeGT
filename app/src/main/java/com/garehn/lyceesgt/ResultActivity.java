@@ -194,10 +194,10 @@ public class ResultActivity extends AppCompatActivity {
 
     public void drawProgressBar(ProgressBar bar, int points, int max){
 
-        int colorGreen = Color.argb(200,144, 217, 43);
-        int colorYellow = Color.argb(200,217, 211, 43);
-        int colorOrange = Color.argb(200,217, 180, 54);
-        int colorRed = Color.argb(200,217, 100, 54);
+        int colorGreen = Color.argb(255,95, 140, 30);
+        int colorYellow = Color.argb(255,145, 180, 45);
+        int colorOrange = Color.argb(255,200, 125, 45);
+        int colorRed = Color.argb(255,200, 45, 45);
 
         LayerDrawable layerDrawable = (LayerDrawable) bar.getProgressDrawable();
         Drawable progressDrawable = layerDrawable.findDrawableByLayerId(android.R.id.progress);
@@ -217,6 +217,8 @@ public class ResultActivity extends AppCompatActivity {
                 progressDrawable.setColorFilter(colorRed, PorterDuff.Mode.SRC_IN);
         }
 
+        //The ResultBar need to be larger
+        bar.setScaleY(2f);
 
         //progressDrawable.setColorFilter(Color.argb(150, 50, 200, 50), PorterDuff.Mode.SRC_IN);
         //progressDrawable.setColorFilter(colorGreen, PorterDuff.Mode.SRC_IN);

@@ -2,12 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     style="@style/ActivityStyle">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     style="@style/ActivityStyle"
+
     tools:context=".LangueActivity">
 
     <TextView
@@ -93,6 +93,7 @@
     <Switch
         android:id="@+id/langue_switch_ESP"
         style="@style/CustomSwitch"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Small"
         android:text="Espagnol"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -102,6 +103,7 @@
     <Switch
         android:id="@+id/langue_switch_ALL"
         style="@style/CustomSwitch"
+
         android:text="Allemand"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -123,7 +125,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_POR" />
 
-
     <Switch
         android:id="@+id/langue_switch_CHI"
         style="@style/CustomSwitch"
@@ -144,9 +145,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_CHI"
         />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
