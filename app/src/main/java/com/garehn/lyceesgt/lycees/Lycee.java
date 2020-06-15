@@ -30,6 +30,10 @@ public class Lycee implements Parcelable {
     protected Location matisseLocation;
     protected Location lyceeLocation;
 
+
+
+    protected int resultRank;
+
     protected int points = 0;
 
     /*----------------------------------------------------------------------------------------------
@@ -103,6 +107,14 @@ public class Lycee implements Parcelable {
     /*----------------------------------------------------------------------------------------------
     GETTERS AND SETTERS
     ----------------------------------------------------------------------------------------------*/
+    public int getResultRank() {
+        return resultRank;
+    }
+
+    public void setResultRank(int resultRank) {
+        this.resultRank = resultRank;
+    }
+
     public int getId() {
         return id;
     }

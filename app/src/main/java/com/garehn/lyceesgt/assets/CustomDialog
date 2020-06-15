@@ -1,0 +1,45 @@
+package com.garehn.lyceesgt.assets;
+
+import android.app.Dialog;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.garehn.lyceesgt.MainActivity;
+import com.garehn.lyceesgt.R;
+
+/**
+ * Created by Formation on 25/03/2018.
+ */
+
+class DialogPerso {
+
+    public static void showDialog(MainActivity mainactivity, String texte){
+        Dialog dialog = new Dialog(mainactivity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.result_dialog);
+
+        TextView tx = (TextView) dialog.findViewById(R.id.texte);
+        tx.setText(texte);
+
+        Button bt1 = (Button) dialog.findViewById(R.id.button1);
+        Button bt2 = (Button) dialog.findViewById(R.id.button2);
+
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Quitter
+            }
+        });
+
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Commencer
+            }
+        });
+
+        dialog.show();
+    }
+}
