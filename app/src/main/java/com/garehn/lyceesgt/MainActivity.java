@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent distanceActivity = new Intent(MainActivity.this, DistanceActivity.class);
+                Intent distanceActivity = new Intent(MainActivity.this, PriorityActivity.class);
                 startActivityForResult(distanceActivity, GAME_ACTIVITY_REQUEST_CODE);
             }
         });

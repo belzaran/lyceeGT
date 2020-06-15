@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#282c37</color>
     <color name="colorAccent">#F44336</color>
     <color name="colorBlank">#d9e1e8</color>
+    <!-- List colors -->
+        <color name="pressed_color">#4d90fe</color>
+        <color name="default_color">#ffffff</color>
 </resources>

@@ -10,13 +10,15 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import com.garehn.lyceesgt.lycees.Lycee;
+import com.garehn.lyceesgt.lycees.Priorities;
 
 public class SizeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public int maxLycees;
     public Lycee[] lycees;
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 2;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 11;
     public static String[] SCORE;
+    public String priority;
     
     private Button buttonValidate;
     private SeekBar sizeBar1;
@@ -33,17 +35,18 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
 
         // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
         Intent intent = getIntent();
-        maxLycees = intent.getIntExtra("max", 0);
-        lycees = new Lycee[maxLycees];
-        SCORE = new String[maxLycees];
-        SCORE[0]="HUGO";
-        SCORE[1]="CHARLEMAGNE";
-        SCORE[2]="GERMAIN";
-        SCORE[3]="ARAGO";
-        SCORE[4]="BOUCHER";
-        SCORE[5]="RAVEL";
-        
         if (intent != null) {
+            priority = intent.getStringExtra("priority");
+            maxLycees = intent.getIntExtra("max", 0);
+
+            lycees = new Lycee[maxLycees];
+            SCORE = new String[maxLycees];
+            SCORE[0]="HUGO";
+            SCORE[1]="CHARLEMAGNE";
+            SCORE[2]="GERMAIN";
+            SCORE[3]="ARAGO";
+            SCORE[4]="BOUCHER";
+            SCORE[5]="RAVEL";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -64,20 +67,21 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-  Log.i("GAREHN_SIZE"," CLICK");
-    calculateScores(sizeBar1.getProgress(), sizeBar2.getProgress());
+        Log.i("GAREHN_SIZE"," CLICK");
+        calculateScores(sizeBar1.getProgress(), sizeBar2.getProgress());
 
 
-    Intent activity = new Intent(SizeActivity.this, RankActivity.class);
+        Intent activity = new Intent(SizeActivity.this, RankActivity.class);
 
-            for(int i = 0; i < maxLycees; i++) {
-        activity.putExtra(SCORE[i], lycees[i]);
-    }
+        for(int i = 0; i < maxLycees; i++) {
+           activity.putExtra(SCORE[i], lycees[i]);
+        }
 
        activity.putExtra("max", maxLycees);
+       activity.putExtra("priority", priority);
 
-    setResult(RESULT_OK, activity);
-    startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
+       setResult(RESULT_OK, activity);
+       startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
 }
 
     public void calculateScores(int a, int b){
@@ -86,6 +90,11 @@ public class SizeActivity extends AppCompatActivity implements View.OnClickListe
         int bonus = a;
         int small = 800;
         int big = 1000;
+
+        if(priority.intern()== Priorities.SIZ.toString().intern()){
+            bonus *= 2 ;
+            Log.i("GAREHN_SIZE","Priority : point bonus");
+        }
 
         for (int i = 0; i<maxLycees; i++){
             if (lycees[i].getPopulation() < 800){

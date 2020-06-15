@@ -13,6 +13,7 @@ import com.garehn.lyceesgt.lycees.DoubleCursus;
 
 import com.garehn.lyceesgt.lycees.Langues;
 import com.garehn.lyceesgt.lycees.Lycee;
+import com.garehn.lyceesgt.lycees.Priorities;
 import com.garehn.lyceesgt.lycees.Specialities;
 import com.garehn.lyceesgt.lycees.Techno;
 
@@ -20,8 +21,9 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
 
     static public int maxLycees = 6;
     public Lycee[] lycees = new Lycee[maxLycees];
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 1;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 10;
     public static final String[] SCORE = new String[maxLycees];
+    public String priority;
 
     private SeekBar distanceBar1;
     private SeekBar distanceBar2;
@@ -32,6 +34,16 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distance);
         createAssets();
+
+        // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
+        Intent intent = getIntent();
+
+        if (intent != null) {
+            priority = intent.getStringExtra("priority");
+        }
+
+        Log.i("GAREHN_DISTANCE",priority);
+
         createLycee();
     }
 
@@ -185,11 +197,12 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
 
         Intent activity = new Intent(DistanceActivity.this, SizeActivity.class);
 
-            for(int i = 0; i < maxLycees; i++) {
-                activity.putExtra(SCORE[i], lycees[i]);
-            }
+        for(int i = 0; i < maxLycees; i++) {
+            activity.putExtra(SCORE[i], lycees[i]);
+        }
 
-            activity.putExtra("max", maxLycees);
+        activity.putExtra("max", maxLycees);
+        activity.putExtra("priority", priority);
 
         setResult(RESULT_OK, activity);
         startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
@@ -199,6 +212,11 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         Log.i("GAREHN_DISTANCE"," Calculate");
 
         int bonus = a+b;
+
+        if(priority.intern()==Priorities.DIS.toString().intern()){
+            bonus *= 2 ;
+            Log.i("GAREHN_DISTANCE","Priority : point bonus");
+        }
 
         for (int i = 0; i<maxLycees; i++){
             if (lycees[i].getDistance() < 1500){

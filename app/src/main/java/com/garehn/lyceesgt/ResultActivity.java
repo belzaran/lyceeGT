@@ -1,7 +1,9 @@
 package com.garehn.lyceesgt;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -15,6 +17,8 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -26,17 +30,20 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     static public int maxLycees;
     public Lycee[] lycees;
     private static final int GAME_ACTIVITY_REQUEST_CODE = 69;
     public String[] SCORE;
+    public String priority;
+
 
     public ArrayList<Integer[]> rankingLycees = new ArrayList<Integer[]>();
 
     private ProgressBar[] resultBar = new ProgressBar[6];
     private TextView[] resultText = new TextView[6];
+    private Button buttonRestart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +51,19 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         createAssets();
 
-        // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
         Intent intent = getIntent();
-        maxLycees = intent.getIntExtra("max", 0);
-        lycees = new Lycee[maxLycees];
-        SCORE = new String[maxLycees];
-        SCORE[0]="HUGO";
-        SCORE[1]="CHARLEMAGNE";
-        SCORE[2]="GERMAIN";
-        SCORE[3]="ARAGO";
-        SCORE[4]="BOUCHER";
-        SCORE[5]="RAVEL";
-
         if (intent != null) {
+            priority = intent.getStringExtra("priority");
+            maxLycees = intent.getIntExtra("max", 0);
+
+            lycees = new Lycee[maxLycees];
+            SCORE = new String[maxLycees];
+            SCORE[0]="HUGO";
+            SCORE[1]="CHARLEMAGNE";
+            SCORE[2]="GERMAIN";
+            SCORE[3]="ARAGO";
+            SCORE[4]="BOUCHER";
+            SCORE[5]="RAVEL";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -79,6 +86,9 @@ public class ResultActivity extends AppCompatActivity {
         resultBar[3] = findViewById(R.id.result_bar_l4);
         resultBar[4] = findViewById(R.id.result_bar_l5);
         resultBar[5] = findViewById(R.id.result_bar_l6);
+
+        buttonRestart = findViewById(R.id.result_button);
+        buttonRestart.setOnClickListener(this);
         //LayerDrawable layerDrawable = (LayerDrawable) resultBar[0].getProgressDrawable();
         //Drawable progressDrawable = layerDrawable.findDrawableByLayerId(android.R.id.progress);
         //progressDrawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
@@ -223,6 +233,32 @@ public class ResultActivity extends AppCompatActivity {
         //progressDrawable.setColorFilter(Color.argb(150, 50, 200, 50), PorterDuff.Mode.SRC_IN);
         //progressDrawable.setColorFilter(colorGreen, PorterDuff.Mode.SRC_IN);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent activity = new Intent(ResultActivity.this, MainActivity.class);
+        startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
+    }
+
+    /*public void sendResult(int[] result){
+        sendMessage("Tes domaines de prédilection", mLevels[result[0]].getName() + " et " + mLevels[result[1]].getName());
+    }
+
+    // OPEN A MESSAGE BOX
+    public void sendMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //finish();
+                    }
+                })
+                .create()
+                .show();
     }
 
 

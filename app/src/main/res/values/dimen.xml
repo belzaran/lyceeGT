@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
     <dimen name="size_title">16sp</dimen>
     <dimen name="size_text">12sp</dimen>
-    <dimen name="title_padding">24dp</dimen>
+    <dimen name="title_padding">24sp</dimen>
     <dimen name="default_padding">8sp</dimen>
 
     <!-- SWITCH -->
@@ -11,4 +13,12 @@
     <!-- BUTTON -->
     <dimen name="button_padding">24sp</dimen>
     <dimen name="button_text">14sp</dimen>
+
+    <!-- SEEKBAR -->
+    <dimen name="seekbar_padding">24sp</dimen>
+
+    <!-- LIST -->
+    <dimen name="list_padding">12sp</dimen>
+    <dimen name="list_text">10sp</dimen>
+
 </resources>

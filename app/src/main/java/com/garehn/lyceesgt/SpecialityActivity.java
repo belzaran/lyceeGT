@@ -11,14 +11,16 @@ import android.widget.Switch;
 
 import com.garehn.lyceesgt.lycees.Langues;
 import com.garehn.lyceesgt.lycees.Lycee;
+import com.garehn.lyceesgt.lycees.Priorities;
 import com.garehn.lyceesgt.lycees.Specialities;
 
 public class SpecialityActivity extends AppCompatActivity implements View.OnClickListener {
 
     static public int maxLycees;
     public Lycee[] lycees;
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 4;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 21;
     public static String[] SCORE;
+    public String priority;
 
     private Switch switchLIT;
     private Switch switchHIS;
@@ -43,19 +45,19 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
 
         createAssets();
 
-        // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
         Intent intent = getIntent();
-        maxLycees = intent.getIntExtra("max", 0);
-        lycees = new Lycee[maxLycees];
-        SCORE = new String[maxLycees];
-        SCORE[0] = "HUGO";
-        SCORE[1] = "CHARLEMAGNE";
-        SCORE[2] = "GERMAIN";
-        SCORE[3] = "ARAGO";
-        SCORE[4] = "BOUCHER";
-        SCORE[5] = "RAVEL";
-
         if (intent != null) {
+            priority = intent.getStringExtra("priority");
+            maxLycees = intent.getIntExtra("max", 0);
+
+            lycees = new Lycee[maxLycees];
+            SCORE = new String[maxLycees];
+            SCORE[0]="HUGO";
+            SCORE[1]="CHARLEMAGNE";
+            SCORE[2]="GERMAIN";
+            SCORE[3]="ARAGO";
+            SCORE[4]="BOUCHER";
+            SCORE[5]="RAVEL";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -95,7 +97,7 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
             }
 
             activity.putExtra("max", maxLycees);
-
+            activity.putExtra("priority", priority);
             setResult(RESULT_OK, activity);
             startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
         }
@@ -106,6 +108,11 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
 
             //Calculate bonus
             int bonus = 2;
+
+            if(priority.intern()== Priorities.SPE.toString().intern()){
+                bonus *= 2 ;
+                Log.i("GAREHN_SPECIALITIES","Priority : point bonus");
+            }
 
             for (int i = 0; i < maxLycees; i++) {
 

@@ -10,13 +10,15 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import com.garehn.lyceesgt.lycees.Lycee;
+import com.garehn.lyceesgt.lycees.Priorities;
 
 public class RankActivity extends AppCompatActivity implements View.OnClickListener {
 
     public int maxLycees;
     public Lycee[] lycees;
-    private static final int GAME_ACTIVITY_REQUEST_CODE = 10;
+    private static final int GAME_ACTIVITY_REQUEST_CODE = 12;
     public static String[] SCORE;
+    public String priority;
 
     private Button buttonValidate;
     private SeekBar rankBar1;
@@ -31,19 +33,19 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
 
         createAssets();
 
-        // TAKE THE RESULTS OF THE LEVEL ACTIVITY (FIRST LINE OF THE TABLE)
         Intent intent = getIntent();
-        maxLycees = intent.getIntExtra("max", 0);
-        lycees = new Lycee[maxLycees];
-        SCORE = new String[maxLycees];
-        SCORE[0]="HUGO";
-        SCORE[1]="CHARLEMAGNE";
-        SCORE[2]="GERMAIN";
-        SCORE[3]="ARAGO";
-        SCORE[4]="BOUCHER";
-        SCORE[5]="RAVEL";
-
         if (intent != null) {
+            priority = intent.getStringExtra("priority");
+            maxLycees = intent.getIntExtra("max", 0);
+
+            lycees = new Lycee[maxLycees];
+            SCORE = new String[maxLycees];
+            SCORE[0]="HUGO";
+            SCORE[1]="CHARLEMAGNE";
+            SCORE[2]="GERMAIN";
+            SCORE[3]="ARAGO";
+            SCORE[4]="BOUCHER";
+            SCORE[5]="RAVEL";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -72,6 +74,7 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         activity.putExtra("max", maxLycees);
+        activity.putExtra("priority", priority);
 
         setResult(RESULT_OK, activity);
         startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
@@ -86,6 +89,11 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
         int bonus = a;
         int bad = 1000;
         int good = 400;
+
+        if(priority.intern()== Priorities.RAN.toString().intern()){
+            bonus *= 2 ;
+            Log.i("GAREHN_RANK","Priority : point bonus");
+        }
 
         for (int i = 0; i<maxLycees; i++){
             if (lycees[i].getRank() < good){

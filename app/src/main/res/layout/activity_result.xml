@@ -3,7 +3,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ActivityStyle">
+    style="@style/ActivityScrollStyle">
 
 <androidx.constraintlayout.widget.ConstraintLayout style="@style/ActivityStyle">
     tools:context=".ResultActivity">
@@ -132,10 +132,17 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/result_text_l6"
         app:layout_constraintTop_toBottomOf="@id/result_text_l5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l6"
+
         style="@style/ResultBar"
         android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.6"/>
+
+    <Button
+        android:id="@+id/result_button"
+        style="@style/ButtonValidation"
+        android:text="RECOMMENCER"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

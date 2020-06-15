@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- ACTIVITY VIEWS -->
 
     <style name="ActivityStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:background">@color/colorBlank</item>
         <item name="android:padding">@dimen/default_padding</item>
+
+    </style>
+
+    <style name="ActivityScrollStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorBlank</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:fillViewport">true</item>
     </style>
 
     <!-- TEXT VIEWS -->
@@ -65,9 +75,9 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">@dimen/default_padding</item>
-        <item name="android:paddingRight">@dimen/default_padding</item>
-
+        <item name="android:layout_marginLeft">@dimen/seekbar_padding</item>
+        <item name="android:paddingRight">@dimen/seekbar_padding</item>
+        <item name="android:thumb">@drawable/custom_seekbar_thumb</item>
     </style>
 
     <style name = "CustomSwitch" parent="@style/Widget.AppCompat.CompoundButton.Switch">
@@ -99,6 +109,16 @@
         <item name="android:textColor">@color/colorBlank</item>
         <item name="android:layout_margin">@dimen/button_padding</item>
         <item name="android:background">@drawable/custom_button</item>
+    </style>
+
+    <style name="CustomList">
+        <item name="android:layout_marginTop">@dimen/list_padding</item>
+        <item name="android:layout_marginLeft">@dimen/list_padding</item>
+        <item name="android:layout_marginRight">@dimen/list_padding</item>
+        <item name="android:layout_marginStart">@dimen/list_padding</item>
+        <item name="android:layout_marginBottom">@dimen/list_padding</item>
+        <item name="android:layout_marginEnd">@dimen/list_padding</item>
+        <item name="android:textSize">@dimen/list_text</item>
     </style>
 
 </resources>
