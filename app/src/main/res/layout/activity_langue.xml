@@ -93,7 +93,7 @@
         android:id="@+id/langue_switch_ESP"
         style="@style/CustomSwitch"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Small"
-        android:text="Espagnol"
+        android:text="@string/ESP"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_text_q2" />
@@ -102,8 +102,7 @@
     <Switch
         android:id="@+id/langue_switch_ALL"
         style="@style/CustomSwitch"
-
-        android:text="Allemand"
+        android:text="@string/ALL"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_ESP" />
@@ -111,7 +110,7 @@
     <Switch
         android:id="@+id/langue_switch_POR"
         style="@style/CustomSwitch"
-        android:text="Portugais"
+        android:text="@string/POR"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_ALL" />
@@ -119,7 +118,7 @@
     <Switch
         android:id="@+id/langue_switch_ITA"
         style="@style/CustomSwitch"
-        android:text="Italien"
+        android:text="@string/ITA"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_POR" />
@@ -130,10 +129,55 @@
         android:checked="false"
         android:showText="true"
         android:switchPadding="16dp"
-        android:text="Chinois"
+        android:text="@string/CHI"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/langue_switch_ITA" />
+
+    <Switch
+        android:id="@+id/langue_switch_RUS"
+        style="@style/CustomSwitch"
+        android:checked="false"
+        android:showText="true"
+        android:switchPadding="16dp"
+        android:text="@string/RUS"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_CHI" />
+
+    <Switch
+        android:id="@+id/langue_switch_SUD"
+        style="@style/CustomSwitch"
+        android:checked="false"
+        android:showText="true"
+        android:switchPadding="16dp"
+        android:text="@string/SUD"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_RUS" />
+
+    <Switch
+        android:id="@+id/langue_switch_ARA"
+        style="@style/CustomSwitch"
+        android:checked="false"
+        android:showText="true"
+        android:switchPadding="16dp"
+        android:text="@string/ARA"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_SUD" />
+
+    <Switch
+        android:id="@+id/langue_switch_JAP"
+        style="@style/CustomSwitch"
+        android:checked="false"
+        android:showText="true"
+        android:switchPadding="16dp"
+        android:text="@string/JAP"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/langue_switch_ARA"
+        app:layout_constraintBottom_toTopOf="@id/langue_button_start" />
 
     <Button
         android:id="@+id/langue_button_start"
@@ -142,7 +186,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/langue_switch_CHI"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

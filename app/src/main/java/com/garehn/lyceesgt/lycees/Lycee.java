@@ -29,11 +29,8 @@ public class Lycee implements Parcelable {
     final double matisseLatitude = 48.8564542;
     protected Location matisseLocation;
     protected Location lyceeLocation;
-
-
-
+    protected int success;
     protected int resultRank;
-
     protected int points = 0;
 
     /*----------------------------------------------------------------------------------------------
@@ -107,6 +104,14 @@ public class Lycee implements Parcelable {
     /*----------------------------------------------------------------------------------------------
     GETTERS AND SETTERS
     ----------------------------------------------------------------------------------------------*/
+    public int getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(int success) {
+        this.success = success;
+    }
+
     public int getResultRank() {
         return resultRank;
     }

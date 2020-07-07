@@ -4,6 +4,8 @@ public enum Specialities {
 
     THE ("Theâtre"),
     HDA ("Histoire des arts"),
+    ART("Arts plastiques"),
+    CIN("Cinéma audiovisuel"),
     LIT("Littérature, langues et cultures de l'antiquité"),
     HIS ("Histoire-géographie, géopolitique et sciences politiques"),
     HUM ("Humanités, littérature et philosophie"),

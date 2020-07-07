@@ -6,6 +6,10 @@
     <string name="ALL">Allemand</string>
     <string name="POR">Portugais</string>
     <string name="CHI">Chinois</string>
+    <string name="RUS">Russe</string>
+    <string name="SUD">Suédois</string>
+    <string name="ARA">Arabe</string>
+    <string name="JAP">Japonais</string>
     <!-- Specialities -->
     <string name="HIS">Histoire-géographie, géopolitique et sciences politiques</string>
     <string name="LIT">Littérature, langues et cultures de l\'antiquité</string>
@@ -19,6 +23,8 @@
     <string name="SES">Sciences économiques et sociales</string>
     <string name="THE">Théâtre</string>
     <string name="HDA">Histoire des arts</string>
+    <string name="CIN">Cinéma audiovisuel</string>
+    <string name="ART">Arts plastiques</string>
 
     <!-- Technologies -->
     <string name="STMG">STMG (management et gestion)</string>

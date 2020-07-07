@@ -52,6 +52,15 @@ public class TechnoActivity extends AppCompatActivity implements View.OnClickLis
             SCORE[3]="ARAGO";
             SCORE[4]="BOUCHER";
             SCORE[5]="RAVEL";
+            SCORE[6]="WEIL";
+            SCORE[7]="TURGOT";
+            SCORE[8]="COLBERT";
+            SCORE[9]="DORIAN";
+            SCORE[10]="VOLTAIRE";
+            SCORE[11]="LEMONNIER";
+            SCORE[12]="VALERY";
+            SCORE[13]="BERGSON";
+            SCORE[14]="DIDEROT";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }

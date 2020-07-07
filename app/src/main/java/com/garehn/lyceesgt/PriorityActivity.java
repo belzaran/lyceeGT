@@ -1,35 +1,25 @@
 package com.garehn.lyceesgt;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.renderscript.RenderScript;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import com.garehn.lyceesgt.lycees.Lycee;
 import com.garehn.lyceesgt.lycees.Priorities;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PriorityActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int GAME_ACTIVITY_REQUEST_CODE = 1;
-
-
     private ArrayList<Priorities> priorities = new ArrayList<>();
     private ListView listPriorities;
     private Priorities priority;
-
     private Button buttonValidate;
 
     @Override
@@ -39,9 +29,6 @@ public class PriorityActivity extends AppCompatActivity implements View.OnClickL
         Log.i("GAREHN_PRIORITY","  Connecting to PriorityActivity");
         addPriorities();
         createAssets();
-
-
-
     }
 
     public void addPriorities() {

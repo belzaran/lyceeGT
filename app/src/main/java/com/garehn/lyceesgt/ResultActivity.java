@@ -44,22 +44,15 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private static final int GAME_ACTIVITY_REQUEST_CODE = 69;
     public String[] SCORE;
     public String priority;
-
-
-
-
     public ArrayList<Integer[]> rankingLycees = new ArrayList<Integer[]>();
-
-    private String LYCEE_LABEL = "Rang : %s\n%s élèves\nDistance : %s m\n\n" +
-            "Langues vivantes : %s\nSpécialités : %s\n Bac techno : %s";
-
-    private ProgressBar[] resultBar = new ProgressBar[6];
-    private TextView[] resultText = new TextView[6];
+    private ProgressBar[] resultBar = new ProgressBar[15];
+    private TextView[] resultText = new TextView[15];
     private Button buttonRestart;
-
     // Dialog
     private TextView dialogTextTitle;
     private TextView dialogText1;
+    private String LYCEE_LABEL = "Rang : %s\n%s élèves\nDistance : %s m\n\n" +
+            "Langues vivantes : %s\nSpécialités : %s\n Bac techno : %s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,19 +67,26 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
             lycees = new Lycee[maxLycees];
             SCORE = new String[maxLycees];
-            SCORE[0] = "HUGO";
-            SCORE[1] = "CHARLEMAGNE";
-            SCORE[2] = "GERMAIN";
-            SCORE[3] = "ARAGO";
-            SCORE[4] = "BOUCHER";
-            SCORE[5] = "RAVEL";
+            SCORE[0]="HUGO";
+            SCORE[1]="CHARLEMAGNE";
+            SCORE[2]="GERMAIN";
+            SCORE[3]="ARAGO";
+            SCORE[4]="BOUCHER";
+            SCORE[5]="RAVEL";
+            SCORE[6]="WEIL";
+            SCORE[7]="TURGOT";
+            SCORE[8]="COLBERT";
+            SCORE[9]="DORIAN";
+            SCORE[10]="VOLTAIRE";
+            SCORE[11]="LEMONNIER";
+            SCORE[12]="VALERY";
+            SCORE[13]="BERGSON";
+            SCORE[14]="DIDEROT";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
         }
-
         sortLycees(maxLycees);
-
     }
 
     public void createAssets() {
@@ -96,18 +96,33 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         resultText[3] = findViewById(R.id.result_text_l4);
         resultText[4] = findViewById(R.id.result_text_l5);
         resultText[5] = findViewById(R.id.result_text_l6);
+        resultText[6] = findViewById(R.id.result_text_l7);
+        resultText[7] = findViewById(R.id.result_text_l8);
+        resultText[8] = findViewById(R.id.result_text_l9);
+        resultText[9] = findViewById(R.id.result_text_l10);
+        resultText[10] = findViewById(R.id.result_text_l11);
+        resultText[11] = findViewById(R.id.result_text_l12);
+        resultText[12] = findViewById(R.id.result_text_l13);
+        resultText[13] = findViewById(R.id.result_text_l14);
+        resultText[14] = findViewById(R.id.result_text_l15);
         resultBar[0] = findViewById(R.id.result_bar_l1);
         resultBar[1] = findViewById(R.id.result_bar_l2);
         resultBar[2] = findViewById(R.id.result_bar_l3);
         resultBar[3] = findViewById(R.id.result_bar_l4);
         resultBar[4] = findViewById(R.id.result_bar_l5);
         resultBar[5] = findViewById(R.id.result_bar_l6);
+        resultBar[6] = findViewById(R.id.result_bar_l7);
+        resultBar[7] = findViewById(R.id.result_bar_l8);
+        resultBar[8] = findViewById(R.id.result_bar_l9);
+        resultBar[9] = findViewById(R.id.result_bar_l10);
+        resultBar[10] = findViewById(R.id.result_bar_l11);
+        resultBar[11] = findViewById(R.id.result_bar_l12);
+        resultBar[12] = findViewById(R.id.result_bar_l13);
+        resultBar[13] = findViewById(R.id.result_bar_l14);
+        resultBar[14] = findViewById(R.id.result_bar_l15);
 
         buttonRestart = findViewById(R.id.result_button);
         buttonRestart.setOnClickListener(this);
-        //LayerDrawable layerDrawable = (LayerDrawable) resultBar[0].getProgressDrawable();
-        //Drawable progressDrawable = layerDrawable.findDrawableByLayerId(android.R.id.progress);
-        //progressDrawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
     }
 
     public static String colorDecToHex(int p_red, int p_green, int p_blue) {
@@ -175,8 +190,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                             max = (int) lycees[j].getPoints();
                         }
                     }
-
-
                 }
             }
         }
@@ -201,11 +214,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
             lycees[key[i]].setResultRank(i);
             resultText[i].setText(i + 1 + " - " + lycees[key[i]].getName());
             drawProgressBar(resultBar[i], lycees[key[i]].getPoints(), finalMax);
-            //LayerDrawable layerDrawable = (LayerDrawable) resultBar[i].getProgressDrawable();
-            //Drawable progressDrawable = layerDrawable.findDrawableByLayerId(android.R.id.progress);
-            //progressDrawable.setColorFilter(Color.argb(150, 50, 200, 50), PorterDuff.Mode.SRC_IN);
         }
-
     }
 
     public void drawProgressBar(ProgressBar bar, int points, int max) {
@@ -237,43 +246,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        //Intent activity = new Intent(ResultActivity.this, MainActivity.class);
-        //startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
 
-        /*if(v == resultText[0]){
-            for(int i = 0; i< maxLycees; i++){
-                if(lycees[i].getResultRank() == 0)
-                    displayLycee(this, lycees[i]);
-            }
-        }
-
-        else if(v == resultText[1]){
-            for(int i = 0; i< maxLycees; i++){
-                if(lycees[i].getResultRank() == 1)
-                    displayLycee(this, lycees[i]);
-            }
-        }
-
-        else if(v == resultText[2]){
-            for(int i = 0; i< maxLycees; i++){
-                if(lycees[i].getResultRank() == 2)
-                    displayLycee(this, lycees[i]);
-            }
-        }
-
-        else if(v == resultText[3]){
-            for(int i = 0; i< maxLycees; i++){
-                if(lycees[i].getResultRank() == 3)
-                    displayLycee(this, lycees[i]);
-            }
-        }
-
-        else if(v == resultText[4]){
-            for(int i = 0; i< maxLycees; i++){
-                if(lycees[i].getResultRank() == 4)
-                    displayLycee(this, lycees[i]);
-            }
-        }*/
         for(int j =0;j<maxLycees;j++) {
             if (v == resultText[j]) {
                 for (int i = 0; i < maxLycees; i++) {
@@ -282,15 +255,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 }
             }
         }
-
-
-
-
     }
-
-    /*public void displayLycee(Activity v, Lycee lycee){
-        ResultDialog.showDialog(this, lycee.getName(),"Voici les règles du jeu dans une Alertdialog personnalisée");
-    }*/
 
     public void displayLycee(Activity activity, Lycee lycee) {
         Dialog dialog = new Dialog(activity, R.style.Theme_AppCompat_Light_Dialog_Alert);
@@ -347,7 +312,3 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         }
     }
-
-
-
-

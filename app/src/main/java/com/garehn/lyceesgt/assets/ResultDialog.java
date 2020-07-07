@@ -21,9 +21,6 @@ public class ResultDialog {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.result_dialog);
-
-
-
         dialog.show();
     }
 }

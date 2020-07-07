@@ -19,10 +19,10 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
     private static final int GAME_ACTIVITY_REQUEST_CODE = 12;
     public static String[] SCORE;
     public String priority;
-
     private Button buttonValidate;
     private SeekBar rankBar1;
     private SeekBar rankBar2;
+    private SeekBar rankBar3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,15 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
             SCORE[3]="ARAGO";
             SCORE[4]="BOUCHER";
             SCORE[5]="RAVEL";
+            SCORE[6]="WEIL";
+            SCORE[7]="TURGOT";
+            SCORE[8]="COLBERT";
+            SCORE[9]="DORIAN";
+            SCORE[10]="VOLTAIRE";
+            SCORE[11]="LEMONNIER";
+            SCORE[12]="VALERY";
+            SCORE[13]="BERGSON";
+            SCORE[14]="DIDEROT";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -53,9 +62,9 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void createAssets(){
-
         rankBar1 = this.findViewById(R.id.rank_seekBar_q1);
         rankBar2 = this.findViewById(R.id.rank_seekBar_q2);
+        rankBar3 = this.findViewById(R.id.rank_seekBar_q3);
         buttonValidate = this.findViewById(R.id.rank_button_start);
         buttonValidate.setOnClickListener(this);
         buttonValidate = findViewById(R.id.rank_button_start);
@@ -65,7 +74,7 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Log.i("GAREHN_rank"," CLICK");
-        calculateScores(rankBar1.getProgress(), rankBar2.getProgress());
+        calculateScores(rankBar1.getProgress(), rankBar2.getProgress(), rankBar3.getProgress());
 
         Intent activity = new Intent(RankActivity.this, LangueActivity.class);
 
@@ -81,7 +90,7 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
         
     }
 
-    public void calculateScores(int a, int b){
+    public void calculateScores(int a, int b, int c){
         Log.i("GAREHN_RANK"," CALCULATE");
 
         //a = importance
@@ -108,7 +117,7 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
             }
-            else if (lycees[i].getPopulation() > bad){
+            else if (lycees[i].getRank() > bad){
                 switch(b){
                     case 0:
                         lycees[i].addPoints(bonus * 2);
@@ -130,6 +139,28 @@ public class RankActivity extends AppCompatActivity implements View.OnClickListe
                         lycees[i].addPoints(bonus * 2);
                         break;
                 }
+            }
+            switch(c){
+                case 0:
+                    if(lycees[i].getSuccess()>= 80){
+                        lycees[i].addPoints(bonus);
+                    }
+                    break;
+                case 1:
+                    if(lycees[i].getSuccess()>= 85){
+                        lycees[i].addPoints(bonus);
+                    }
+                    break;
+                case 2:
+                    if(lycees[i].getSuccess()>= 90){
+                        lycees[i].addPoints(bonus);
+                    }
+                    break;
+                case 3:
+                    if(lycees[i].getSuccess()>= 95){
+                        lycees[i].addPoints(bonus);
+                    }
+                    break;
             }
             Log.i("GAREHN_RANK",lycees[i].getName() + " : " + lycees[i].getPoints());
         }

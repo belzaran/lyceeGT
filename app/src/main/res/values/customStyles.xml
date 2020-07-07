@@ -19,7 +19,8 @@
         <item name="android:fillViewport">true</item>
     </style>
 
-    <!-- TEXT VIEWS -->
+
+<!-- TEXT VIEWS -->
 
     <style name ="TextTitle">
         <item name="android:layout_width">match_parent</item>

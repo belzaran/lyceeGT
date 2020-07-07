@@ -136,6 +136,24 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/speciality_switch_THE" />
 
+    <Switch
+        android:id="@+id/speciality_switch_CIN"
+        style="@style/CustomSwitch"
+        android:text="@string/CIN"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_HDA" />
+
+    <Switch
+        android:id="@+id/speciality_switch_ART"
+        style="@style/CustomSwitch"
+        android:text="@string/ART"
+        android:layout_width="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_CIN" />
+
     <Button
         android:id="@+id/speciality_button_start"
         android:text="VALIDER"
@@ -143,7 +161,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/speciality_switch_HDA"
+        app:layout_constraintTop_toBottomOf="@id/speciality_switch_ART"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

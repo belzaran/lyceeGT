@@ -15,6 +15,7 @@
 
     <!-- SEEKBAR -->
     <dimen name="seekbar_padding">24sp</dimen>
+    <dimen name="seekbar_thumb">32sp</dimen>
 
         <!-- LIST -->
         <dimen name="list_padding">24sp</dimen>

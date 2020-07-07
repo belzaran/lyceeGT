@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/ActivityScrollStyle">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     style="@style/ActivityStyle"
     tools:context=".RankActivity">
 
@@ -130,6 +128,76 @@
         app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q2"
         />
 
+    <ImageView
+        android:id="@+id/rank_bar_2"
+        android:layout_width="512dp"
+        android:layout_height="32dp"
+        android:background="@color/colorBlank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rank_text_r3_2"
+        app:layout_constraintBottom_toTopOf="@id/rank_text_q3"/>
+
+    <TextView
+        android:id="@+id/rank_text_q3"
+        android:text="Quels résultats au bac doit avoir le lycée ?"
+        style="@style/TextQuestion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rank_bar_2" />
+
+    <SeekBar
+        android:id="@+id/rank_seekBar_q3"
+        style="@style/SeekBarLevel"
+        android:max="3"
+        app:layout_constraintBottom_toTopOf="@id/rank_text_r1_3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rank_text_q3" />
+
+    <TextView
+        android:id="@+id/rank_text_r1_3"
+        android:text=">80%"
+        style="@style/TextQuestion"
+        android:gravity="left"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r2_3"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q3"
+        />
+
+    <TextView
+        android:id="@+id/rank_text_r2_3"
+        android:text=">85%"
+        style="@style/TextQuestion"
+        android:textAlignment="gravity"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r1_3"
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r3_3"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q3"
+        />
+
+    <TextView
+        android:id="@+id/rank_text_r3_3"
+        android:text=">90%"
+        style="@style/TextQuestion"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r2_3"
+        app:layout_constraintRight_toLeftOf="@id/rank_text_r3_4"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q3"
+        />
+
+    <TextView
+        android:id="@+id/rank_text_r3_4"
+        android:text=">95%"
+        style="@style/TextQuestion"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        app:layout_constraintLeft_toRightOf="@id/rank_text_r3_3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rank_seekBar_q3"
+        />
 
     <Button
         android:id="@+id/rank_button_start"
@@ -138,8 +206,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rank_text_r3_2"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/rank_text_r3_3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
     

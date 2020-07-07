@@ -34,6 +34,7 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
     private Switch switchSES;
     private Switch switchTHE;
     private Switch switchHDA;
+    private Switch switchCIN;
     private Button buttonValidate;
 
 
@@ -58,6 +59,15 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
             SCORE[3]="ARAGO";
             SCORE[4]="BOUCHER";
             SCORE[5]="RAVEL";
+            SCORE[6]="WEIL";
+            SCORE[7]="TURGOT";
+            SCORE[8]="COLBERT";
+            SCORE[9]="DORIAN";
+            SCORE[10]="VOLTAIRE";
+            SCORE[11]="LEMONNIER";
+            SCORE[12]="VALERY";
+            SCORE[13]="BERGSON";
+            SCORE[14]="DIDEROT";
             for (int i = 0; i < maxLycees; i++) {
                 lycees[i] = intent.getParcelableExtra(SCORE[i]);
             }
@@ -78,6 +88,7 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
         switchSES = findViewById(R.id.speciality_switch_SES);
         switchTHE = findViewById(R.id.speciality_switch_THE);
         switchHDA = findViewById(R.id.speciality_switch_HDA);
+        switchCIN = findViewById(R.id.speciality_switch_CIN);
 
         buttonValidate = findViewById(R.id.speciality_button_start);
         buttonValidate.setOnClickListener(this);
@@ -87,7 +98,11 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onClick (View v){
             Log.i("GAREHN_TECHNO", " CLICK");
-            calculateScores(switchLIT.isChecked(), switchHIS.isChecked(), switchHUM.isChecked(), switchLAN.isChecked(), switchMAT.isChecked(),switchNUM.isChecked(),switchPHY.isChecked(),switchSVT.isChecked(),switchSI.isChecked(),switchSES.isChecked(),switchTHE.isChecked(),switchHDA.isChecked());
+            calculateScores(switchLIT.isChecked(), switchHIS.isChecked(), switchHUM.isChecked(),
+                            switchLAN.isChecked(), switchMAT.isChecked(),switchNUM.isChecked(),
+                            switchPHY.isChecked(),switchSVT.isChecked(),switchSI.isChecked(),
+                            switchSES.isChecked(),switchTHE.isChecked(),switchHDA.isChecked(),
+                            switchCIN.isChecked());
 
 
             Intent activity = new Intent(SpecialityActivity.this, TechnoActivity.class);
@@ -102,7 +117,7 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
             startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
         }
 
-        public void calculateScores (boolean lit, boolean his, boolean hum, boolean lan, boolean mat, boolean num, boolean phy,boolean svt, boolean si, boolean ses, boolean the, boolean hda)
+        public void calculateScores (boolean lit, boolean his, boolean hum, boolean lan, boolean mat, boolean num, boolean phy,boolean svt, boolean si, boolean ses, boolean the, boolean hda, boolean cin)
         {
             Log.i("GAREHN_SPECIALITY", " CALCULATE");
 
@@ -184,6 +199,12 @@ public class SpecialityActivity extends AppCompatActivity implements View.OnClic
 
                 if (hda) {
                     if (lycees[i].getSpecialities().contains(Specialities.HDA)) {
+                        lycees[i].addPoints(bonus);
+                    }
+                }
+
+                if (cin) {
+                    if (lycees[i].getSpecialities().contains(Specialities.CIN)) {
                         lycees[i].addPoints(bonus);
                     }
                 }

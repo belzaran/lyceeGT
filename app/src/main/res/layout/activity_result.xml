@@ -146,7 +146,204 @@
         app:layout_constraintLeft_toRightOf="@id/result_text_l6"
         app:layout_constraintTop_toBottomOf="@id/result_text_l5"
         app:layout_constraintBottom_toBottomOf="@id/result_text_l6"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
 
+    <TextView
+        android:id="@+id/result_text_l7"
+        android:text="Lycée 7"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l7"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l6"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l7"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l7"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l6"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l7"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l8"
+        android:text="Lycée 8"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l8"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l7"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+    android:id="@+id/result_bar_l8"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toRightOf="@id/result_text_l8"
+    app:layout_constraintTop_toBottomOf="@id/result_text_l7"
+    app:layout_constraintBottom_toBottomOf="@id/result_text_l8"
+    style="@style/ResultBar"
+    android:layout_width="0dp"
+    app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l9"
+        android:text="Lycée 9"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l9"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l8"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l9"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l8"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l9"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l10"
+        android:text="Lycée 10"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l10"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l9"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l10"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l9"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l10"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l11"
+        android:text="Lycée 11"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l11"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l10"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l11"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l11"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l10"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l11"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l12"
+        android:text="Lycée 12"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l12"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l11"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l12"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l12"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l11"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l12"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l13"
+        android:text="Lycée 13"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l13"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l12"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l13"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l13"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l12"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l13"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+    android:id="@+id/result_text_l14"
+    android:text="Lycée 14"
+    style="@style/TextResult"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/result_bar_l14"
+    app:layout_constraintTop_toBottomOf="@id/result_text_l13"
+    android:layout_width="0dp"
+    android:onClick="onClick"
+    android:clickable="true"
+    app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l14"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l13"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l14"
+        style="@style/ResultBar"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/result_text_l15"
+        android:text="Lycée 15"
+        style="@style/TextResult"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/result_bar_l15"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l14"
+        android:layout_width="0dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/result_bar_l15"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/result_text_l15"
+        app:layout_constraintTop_toBottomOf="@id/result_text_l14"
+        app:layout_constraintBottom_toBottomOf="@id/result_text_l15"
         style="@style/ResultBar"
         android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.6"/>
@@ -155,6 +352,9 @@
         android:id="@+id/result_button"
         style="@style/ButtonValidation"
         android:text="RECOMMENCER"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_bar_l15"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
