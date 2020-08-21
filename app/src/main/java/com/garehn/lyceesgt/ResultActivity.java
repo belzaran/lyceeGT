@@ -51,8 +51,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     // Dialog
     private TextView dialogTextTitle;
     private TextView dialogText1;
-    private String LYCEE_LABEL = "Rang : %s\n%s élèves\nDistance : %s m\n\n" +
-            "Langues vivantes : %s\nSpécialités : %s\n Bac techno : %s";
+    private TextView dialogText2;
+    private TextView dialogText3;
+    private TextView dialogText4;
+    private TextView dialogText5;
+    private Button dialogButton;
+    private String LYCEE_LABEL1 = "Rang : %s\nRéussite au BAC : %s%%\nNombre d'élèves : %s\nDistance : %s m";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -247,6 +252,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
+        if(v == buttonRestart){
+            Intent activity = new Intent(ResultActivity.this, MainActivity.class);
+            startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
+        }
+
         for(int j =0;j<maxLycees;j++) {
             if (v == resultText[j]) {
                 for (int i = 0; i < maxLycees; i++) {
@@ -255,10 +265,12 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 }
             }
         }
+
     }
 
     public void displayLycee(Activity activity, Lycee lycee) {
-        Dialog dialog = new Dialog(activity, R.style.Theme_AppCompat_Light_Dialog_Alert);
+
+        final Dialog dialog = new Dialog(activity, R.style.Theme_AppCompat_Light_Dialog_Alert);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.result_dialog);
         Window window = dialog.getWindow();
@@ -267,6 +279,10 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         dialogTextTitle = dialog.findViewById(R.id.result_dialog_title);
         dialogTextTitle.setText(lycee.getName());
         dialogText1 = dialog.findViewById(R.id.result_dialog_txt1);
+        dialogText2 = dialog.findViewById(R.id.result_dialog_txt2);
+        dialogText3 = dialog.findViewById(R.id.result_dialog_txt3);
+        dialogText4 = dialog.findViewById(R.id.result_dialog_txt4);
+        dialogText5 = dialog.findViewById(R.id.result_dialog_txt5);
 
         // Get the languages;
         String langues = "";
@@ -274,9 +290,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         for (int i = 0; i < lvSize; i++) {
             if (i != lvSize - 1) {
-                langues += lycee.getLangues().get(i).toString() + " | ";
-            } else {
                 langues += lycee.getLangues().get(i).toString() + "\n";
+            } else {
+                langues += lycee.getLangues().get(i).toString();
             }
         }
 
@@ -285,10 +301,26 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
             int spSize = lycee.getSpecialities().size();
 
             for (int i = 0; i < spSize; i++) {
-                if (i != lvSize - 1) {
+                if (i != spSize - 1) {
                     specialities += lycee.getSpecialities().get(i).toString() + "\n";
                 }
+                else{
+                    specialities += lycee.getSpecialities().get(i).toString();
+                }
             }
+
+        //Get the double cursus
+        String cursus = "";
+        int cuSize = lycee.getDoubleCursus().size();
+
+        for (int i = 0; i < cuSize; i++) {
+            if (i != cuSize - 1) {
+                cursus += lycee.getDoubleCursus().get(i).toString() + "\n";
+            }
+            else{
+                cursus += lycee.getDoubleCursus().get(i).toString();
+            }
+        }
 
         //Get the techno
         String techno = "";
@@ -296,19 +328,37 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         if(tcSize != 0){
                 for (int i = 0; i < tcSize; i++) {
-                    if (i != lvSize - 1) {
+                    if (i != tcSize - 1) {
                     techno += lycee.getTechno().get(i).toString() + "\n";
+                    }
+                    else{
+                        techno += lycee.getTechno().get(i).toString();
                     }
                  }
             }
         else{ techno = "aucun";}
 
-        dialogText1.setText(String.format(LYCEE_LABEL, lycee.getRank(), lycee.getPopulation(), lycee.getDistance(),
-                    langues, specialities, techno));
-            //dialogText1.setText(lycee.getPopulation() + " élèves" + "\n" + "Rang : " + lycee.getRank());
-            dialog.show();
+        dialogText1.setText(String.format(LYCEE_LABEL1, lycee.getRank(), lycee.getSuccess(), lycee.getPopulation(), lycee.getDistance()));
+        dialogText2.setText(String.format(langues));
+        dialogText3.setText(String.format(specialities));
+        dialogText4.setText(String.format(techno));
+        dialogText5.setText(String.format(cursus));
 
-            Button dialogButton = findViewById(R.id.result_button);
+        dialog.show();
+
+        dialogButton = dialog.findViewById(R.id.result_dialog_button);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
 
         }
+
+
+
+
+
     }

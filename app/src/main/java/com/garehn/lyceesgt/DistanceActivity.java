@@ -76,6 +76,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         hugo.setSuccess(96);
         hugo.setPopulation(491);
         hugo.setRank(168);
+        hugo.setSecondPopulation(175);
         hugo.addLangue(Langues.ALL);
         hugo.addLangue(Langues.ESP);
         hugo.addLangue(Langues.ITA);
@@ -98,6 +99,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         charlemagne.setPopulation(1014);
         charlemagne.setRank(56);
         charlemagne.setSuccess(98);
+        charlemagne.setSecondPopulation(256);
         charlemagne.addLangue(Langues.ALL);
         charlemagne.addLangue(Langues.ESP);
         charlemagne.addSpecialities(Specialities.HIS);
@@ -116,6 +118,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         germain.setPopulation(861);
         germain.setRank(78);
         germain.setSuccess(99);
+        germain.setSecondPopulation(282);
         germain.addLangue(Langues.ALL);
         germain.addLangue(Langues.POR);
         germain.addLangue(Langues.ESP);
@@ -142,6 +145,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         arago.setPopulation(751);
         arago.setRank(628);
         arago.setSuccess(97);
+        arago.setSecondPopulation(244);
         arago.addSpecialities(Specialities.HIS);
         arago.addSpecialities(Specialities.HUM);
         arago.addSpecialities(Specialities.MAT);
@@ -162,6 +166,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         boucher.setPopulation(1372);
         boucher.setRank(369);
         boucher.setSuccess(95);
+        boucher.setSecondPopulation(428);
         boucher.addSpecialities(Specialities.HDA);
         boucher.addSpecialities(Specialities.HIS);
         boucher.addSpecialities(Specialities.HUM);
@@ -185,6 +190,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         ravel.setPopulation(1423);
         ravel.setRank(606);
         ravel.setSuccess(95);
+        ravel.setSecondPopulation(458);
         ravel.addSpecialities(Specialities.HIS);
         ravel.addSpecialities(Specialities.HUM);
         ravel.addSpecialities(Specialities.LAN);
@@ -210,6 +216,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         weil.setPopulation(387);
         weil.setRank(1879);
         weil.setSuccess(91);
+        weil.setSecondPopulation(93);
         weil.addLangue(Langues.ALL);
         weil.addLangue(Langues.ESP);
         weil.addSpecialities(Specialities.HIS);
@@ -226,6 +233,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         turgot.setPopulation(1371);
         turgot.setRank(454);
         turgot.setSuccess(95);
+        turgot.setSecondPopulation(234);
         turgot.addLangue(Langues.ALL);
         turgot.addLangue(Langues.CHI);
         turgot.addLangue(Langues.ESP);
@@ -246,6 +254,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         colbert.setPopulation(638);
         colbert.setRank(2222);
         colbert.setSuccess(87);
+        colbert.setSecondPopulation(182);
         colbert.addLangue(Langues.ESP);
         colbert.addLangue(Langues.ALL);
         colbert.addLangue(Langues.RUS);
@@ -267,6 +276,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         dorian.setPopulation(969);
         dorian.setRank(1869);
         dorian.setSuccess(91);
+        dorian.setSecondPopulation(154);
         dorian.addLangue(Langues.ALL);
         dorian.addLangue(Langues.ESP);
         dorian.addSpecialities(Specialities.HIS);
@@ -284,6 +294,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         voltaire.setPopulation(1139);
         voltaire.setRank(2263);
         voltaire.setSuccess(84);
+        voltaire.setSecondPopulation(419);
         voltaire.addLangue(Langues.ALL);
         voltaire.addLangue(Langues.ARA);
         voltaire.addLangue(Langues.CHI);
@@ -302,12 +313,12 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         voltaire.addDoubleCursus(DoubleCursus.EUROANG);
 
         // lemonnier
-
         Lycee lemonnier = new Lycee("Elisa Lemonnier", 48.8359260559082, 2.4088594913482666);
         lycees[11] = lemonnier;
         lemonnier.setPopulation(1256);
         lemonnier.setRank(1887);
         lemonnier.setSuccess(92);
+        lemonnier.setSecondPopulation(134);
         lemonnier.addLangue(Langues.ALL);
         lemonnier.addLangue(Langues.ESP);
         lemonnier.addSpecialities(Specialities.HIS);
@@ -321,12 +332,12 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         lemonnier.addTechno(Techno.STMG);
 
         //valery
-
         Lycee valery = new Lycee("Paul Valéry",48.84073257446289,2.4092459678649902);
         lycees[12] = valery;
         valery.setPopulation(975);
         valery.setRank(2277);
         valery.setSuccess(77);
+        valery.setSecondPopulation(297);
         valery.addLangue(Langues.ALL);
         valery.addLangue(Langues.CHI);
         valery.addLangue(Langues.ESP);
@@ -346,12 +357,12 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         valery.addDoubleCursus(DoubleCursus.EUROESP);
 
         //bergson
-
         Lycee bergson = new Lycee("Bergson-Jacquard", 48.880836486816406, 2.3774421215057373);
         lycees[13] = bergson;
         bergson.setPopulation(817);
         bergson.setRank(2234);
         bergson.setSuccess(79);
+        bergson.setSecondPopulation(266);
         bergson.addLangue(Langues.ALL);
         bergson.addLangue(Langues.ESP);
         bergson.addLangue(Langues.ITA);
@@ -374,6 +385,7 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         diderot.setPopulation(1103);
         diderot.setRank(1182);
         diderot.setSuccess(96);
+        diderot.setSecondPopulation(244);
         diderot.addLangue(Langues.ALL);
         diderot.addLangue(Langues.CHI);
         diderot.addLangue(Langues.ESP);
@@ -388,7 +400,6 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         diderot.addSpecialities(Specialities.SES);
         diderot.addTechno(Techno.STI2D);
 
-
         for (int i = 0; i<maxLycees;i++){
             lycees[i].setId(i);
         }
@@ -399,16 +410,12 @@ public class DistanceActivity extends AppCompatActivity implements View.OnClickL
         Log.i("GAREHN_DISTANCE"," Click");
         calculateScores(distanceBar1.getProgress(), distanceBar2.getProgress());
 
-
         Intent activity = new Intent(DistanceActivity.this, SizeActivity.class);
-
         for(int i = 0; i < maxLycees; i++) {
             activity.putExtra(SCORE[i], lycees[i]);
         }
-
         activity.putExtra("max", maxLycees);
         activity.putExtra("priority", priority);
-
         setResult(RESULT_OK, activity);
         startActivityForResult(activity, GAME_ACTIVITY_REQUEST_CODE);
     }

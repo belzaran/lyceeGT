@@ -4,8 +4,10 @@
 
     <dimen name="size_title">16sp</dimen>
     <dimen name="size_text">12sp</dimen>
+    <dimen name="size_text_small">10sp</dimen>
     <dimen name="title_padding">24sp</dimen>
     <dimen name="default_padding">8sp</dimen>
+    <dimen name="small_padding">2sp</dimen>
 
     <!-- SWITCH -->
     <dimen name="switch_padding">16sp</dimen>

@@ -34,4 +34,21 @@
     <string name="ST2S">ST2S (santé et social)</string>
     <string name="STHR">STHR (hôtellerie et restauration)</string>
 
+    <!-- Double cursus -->
+    <string name ="ESABAC">ESABAC (italien)</string>
+    <string name ="BACHIBAC">BACHIBAC (espagnol)</string>
+    <string name ="ABIBAC">ABIBAC (allemand)</string>
+
+    <string name ="BIITA">Section binationale italien</string>
+    <string name ="BIALL">Section binationale allemand</string>
+    <string name ="BIESP">Section binationale espagnol</string>
+
+    <string name ="EUROESP">Section européenne espagnol</string>
+    <string name ="EUROANG">Section européenne anglais</string>
+    <string name ="EUROALL">Section européenne allemand</string>
+    <string name ="EUROPOR">Section européenne portugais</string>
+
+    <string name ="INTANG">Section internationale anglais</string>
+
+
 </resources>

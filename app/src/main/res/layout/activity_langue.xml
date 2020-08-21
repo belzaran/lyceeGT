@@ -92,7 +92,6 @@
     <Switch
         android:id="@+id/langue_switch_ESP"
         style="@style/CustomSwitch"
-        android:switchTextAppearance="@style/TextAppearance.AppCompat.Small"
         android:text="@string/ESP"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

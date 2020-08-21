@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ActivityStyle"
-    tools:context=".ResultActivity">
+    style="@style/ActivityScrollStyle">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/ActivityStyle">
+        tools:context=".ResultActivity">
 
     <TextView
         android:id="@+id/result_dialog_title"
         android:text="Title"
-        style="@style/TextTitle"
+        style="@style/LyceeTextTitle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -18,24 +20,105 @@
     <TextView
         android:id="@+id/result_dialog_txt1"
         android:text="Texte"
-        style="@style/TextQuestion"
-        android:layout_width="wrap_content"
+        style="@style/LyceeText"
+        android:layout_width="fill_parent"
         app:layout_constraintTop_toBottomOf="@+id/result_dialog_title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/result_dialog_button"
          />
 
+
+    <TextView
+        android:id="@+id/result_dialog_langue"
+        android:text="Langues vivantes"
+        style="@style/LyceeTextSubtitle"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_txt1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/result_dialog_txt2"
+        android:text="Texte"
+        style="@style/LyceeText"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_langue"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/result_dialog_specialities"
+        android:text="Spécialités"
+        style="@style/LyceeTextSubtitle"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_txt2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+    android:id="@+id/result_dialog_txt3"
+    android:text="Texte"
+    style="@style/LyceeText"
+        android:layout_width="fill_parent"
+    app:layout_constraintTop_toBottomOf="@+id/result_dialog_specialities"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    />
+
+    <TextView
+        android:id="@+id/result_dialog_techno"
+        android:text="BAC technologiques"
+        style="@style/LyceeTextSubtitle"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_txt3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/result_dialog_txt4"
+        android:text="Texte"
+        style="@style/LyceeText"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_techno"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/result_dialog_cursus"
+        android:text="Sections particulières"
+        style="@style/LyceeTextSubtitle"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_txt4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/result_dialog_txt5"
+        android:text="Texte"
+        style="@style/LyceeText"
+        android:layout_width="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_dialog_cursus"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
 
         <Button
             android:id="@+id/result_dialog_button"
             style="@style/ButtonValidation"
-            android:text="Quitter"
+            android:text="FERMER"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_dialog_txt5"
             />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

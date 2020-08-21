@@ -12,7 +12,7 @@ public enum DoubleCursus {
     EUROPOR("Section européenne portugais"),
     EUROESP("Section européenne espagnol"),
     EUROANG("Section européenne anglais"),
-    INTANG("secontion internationale anglais");
+    INTANG("Section internationale anglais");
 
     private String name = "";
 

@@ -94,7 +94,7 @@ public class LangueActivity extends AppCompatActivity implements View.OnClickLis
                 switchPor.isChecked(), switchIta.isChecked(), switchChi.isChecked(),
                 switchRus.isChecked(),switchSud.isChecked(), switchAra.isChecked(), switchJap.isChecked());
 
-        Intent activity = new Intent(LangueActivity.this, SpecialityActivity.class);
+        Intent activity = new Intent(LangueActivity.this, CursusActivity.class);
 
         for(int i = 0; i < maxLycees; i++) {
             activity.putExtra(SCORE[i], lycees[i]);

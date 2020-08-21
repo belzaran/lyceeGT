@@ -55,6 +55,46 @@
         <item name="android:padding">@dimen/default_padding</item>
     </style>
 
+    <style name ="LyceeTextTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/size_title</item>
+        <item name="android:padding">@dimen/default_padding</item>
+    </style>
+
+    <style name="LyceeText">
+        <item name="android:textSize">@dimen/size_text_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/default_padding</item>
+        <item name="android:paddingLeft">@dimen/default_padding</item>
+        <item name="android:paddingTop">@dimen/small_padding</item>
+        <item name="android:paddingRight">@dimen/default_padding</item>
+    </style>
+
+    <style name="LyceeTextSubtitle">
+        <item name="android:textSize">@dimen/size_text_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/default_padding</item>
+        <item name="android:paddingLeft">@dimen/default_padding</item>
+        <item name="android:paddingBottom">@dimen/small_padding</item>
+        <item name="android:paddingRight">@dimen/default_padding</item>
+    </style>
+
     <!-- OTHERS -->
 
     <style name="ResultBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
@@ -97,9 +137,11 @@
         <item name="android:showText">true</item>
         <item name="android:textOn">Oui</item>
         <item name="android:textOff">Non</item>
-        <item name="android:thumbTint">@color/colorPrimary</item>
-        <item name="android:switchTextAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:switchTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
         <item name="android:background">@drawable/custom_button</item>
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:thumbTint">@color/colorPrimary</item>
+
     </style>
 
     <style name="ButtonValidation">

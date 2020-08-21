@@ -14,14 +14,11 @@ public class Lycee implements Parcelable {
     protected ArrayList<Techno> techno = new ArrayList();
     protected ArrayList<Specialities> specialities = new ArrayList();
     protected ArrayList<DoubleCursus> doubleCursus = new ArrayList();
-
     protected String name = "";
-    //protected int time = 0;
-
     protected int population; // reference : https://ville-data.com/
+    protected int secondPopulation; //reference : https://ville-data.com/
     protected int rank; // reference : https://ville-data.com/
     //Best Rank is 1. Calcul = (Taux de mention * 3) + (Taux de réussite * 2) + (Taux d'accès seconde bac ) + (effectif seconde/50))*100).
-
     protected int distance;
     protected double longitude;
     protected double latitude;
@@ -51,6 +48,7 @@ public class Lycee implements Parcelable {
         name = in.readString();
         population = in.readInt();
         rank = in.readInt();
+        success = in.readInt();
         distance = in.readInt();
         longitude = in.readDouble();
         latitude = in.readDouble();
@@ -104,6 +102,14 @@ public class Lycee implements Parcelable {
     /*----------------------------------------------------------------------------------------------
     GETTERS AND SETTERS
     ----------------------------------------------------------------------------------------------*/
+    public int getSecondPopulation() {
+        return secondPopulation;
+    }
+
+    public void setSecondPopulation(int secondPopulation) {
+        this.secondPopulation = secondPopulation;
+    }
+
     public int getSuccess() {
         return success;
     }
@@ -132,32 +138,16 @@ public class Lycee implements Parcelable {
         return doubleCursus;
     }
 
-    public void setDoubleCursus(ArrayList<DoubleCursus> doubleCursuses) {
-        this.doubleCursus = doubleCursuses;
-    }
-
     public ArrayList<Langues> getLangues() {
         return langues;
-    }
-
-    public void setLangues(ArrayList<Langues> langues) {
-        this.langues = langues;
     }
 
     public ArrayList<Techno> getTechno() {
         return techno;
     }
 
-    public void setTechno(ArrayList<Techno> techno) {
-        this.techno = techno;
-    }
-
     public ArrayList<Specialities> getSpecialities() {
         return specialities;
-    }
-
-    public void setSpecialities(ArrayList<Specialities> specialities) {
-        this.specialities = specialities;
     }
 
     public int getDistance() {
@@ -171,14 +161,6 @@ public class Lycee implements Parcelable {
     public void setName(String name) {
         this.name = name;
     }
-
-    /*public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
-    }*/
 
     public int getPopulation() {
         return population;
@@ -224,7 +206,6 @@ public class Lycee implements Parcelable {
         this.points = points;
     }
 
-
  /*----------------------------------------------------------------------------------------------
     FUNCTIONS
     ----------------------------------------------------------------------------------------------*/
@@ -264,6 +245,7 @@ public class Lycee implements Parcelable {
         dest.writeString(name);
         dest.writeInt(population);
         dest.writeInt(rank);
+        dest.writeInt(success);
         dest.writeInt(distance);
         dest.writeDouble(longitude);
         dest.writeDouble(latitude);

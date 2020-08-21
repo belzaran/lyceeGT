@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ActivityScrollStyle">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ActivityStyle"
+
+        tools:context=".CursusActivity">
+
+        <TextView
+            android:id="@+id/cursus_text_title"
+            android:text="Double cursus"
+            style="@style/TextTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cursus_text_q1"/>
+
+
+        <TextView
+            android:id="@+id/cursus_text_q1"
+            android:text="Quelle(s) section(s) binationale(s) souhaites-tu suivre au lycée ?"
+            style="@style/TextQuestion"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_text_title"
+            app:layout_constraintBottom_toTopOf="@id/cursus_switch_ABIBAC"/>
+
+
+        <Switch
+            android:id="@+id/cursus_switch_ABIBAC"
+            style="@style/CustomSwitch"
+            android:text="@string/ABIBAC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_text_q1" />
+
+
+        <Switch
+            android:id="@+id/cursus_switch_BACHIBAC"
+            style="@style/CustomSwitch"
+            android:text="@string/BACHIBAC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_ABIBAC" />
+
+        <Switch
+            android:id="@+id/cursus_switch_ESABAC"
+            style="@style/CustomSwitch"
+            android:text="@string/ESABAC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_BACHIBAC"
+            />
+
+        <ImageView
+            android:id="@+id/cursus_bar_1"
+            android:layout_width="512dp"
+            android:layout_height="32dp"
+            android:background="@color/colorBlank"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_ESABAC"
+            app:layout_constraintBottom_toTopOf="@id/cursus_text_q2"
+            />
+
+        <TextView
+            android:id="@+id/cursus_text_q2"
+            android:text="Quelle(s) section(s) binationale(s) souhaites-tu suivre au lycée ?"
+            style="@style/TextQuestion"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_bar_1" />
+
+        <Switch
+            android:id="@+id/cursus_switch_BIALL"
+            style="@style/CustomSwitch"
+            android:text="@string/BIALL"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_text_q2" />
+
+        <Switch
+            android:id="@+id/cursus_switch_BIESP"
+            style="@style/CustomSwitch"
+            android:text="@string/BIESP"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_BIALL" />
+
+        <Switch
+            android:id="@+id/cursus_switch_BIITA"
+            style="@style/CustomSwitch"
+            android:text="@string/BIITA"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_BIESP" />
+
+        <Switch
+            android:id="@+id/cursus_switch_EUROALL"
+            style="@style/CustomSwitch"
+            android:text="@string/EUROALL"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_BIITA" />
+
+        <Switch
+            android:id="@+id/cursus_switch_EUROANG"
+            style="@style/CustomSwitch"
+            android:text="@string/EUROANG"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_EUROALL" />
+
+        <Switch
+            android:id="@+id/cursus_switch_EUROESP"
+            style="@style/CustomSwitch"
+            android:text="@string/EUROESP"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_EUROANG" />
+
+        <Switch
+            android:id="@+id/cursus_switch_EUROPOR"
+            style="@style/CustomSwitch"
+            android:text="@string/EUROPOR"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_EUROESP" />
+
+        <Switch
+            android:id="@+id/cursus_switch_INTANG"
+            style="@style/CustomSwitch"
+            android:text="@string/INTANG"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_EUROPOR" />
+
+
+
+        <Button
+            android:id="@+id/cursus_button_start"
+            android:text="VALIDER"
+            style="@style/ButtonValidation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cursus_switch_INTANG"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
